@@ -13,7 +13,7 @@ Here is my configuration for the `Linux UBUNTU` terminal.
 
 > ❌ Do not execute the commands below as a script
 >
-> Some may expect user input.
+> 🧑🏻‍💻 Some may expect user input.
 >
 > ⚠️ The installation might end with an error,
 > so take them **individually** and analyze the reusult.
@@ -36,6 +36,12 @@ sudo apt install fzf        # fuzzy finder
 sudo apt install sl         # Steam Locomotive
 sudo apt install cmatrix
 
+
+
+sudo apt install htop		# process viewer
+sudo apt install bpytop		# resource monitor that shows usage and stats
+
+
 # downloading instructions for multiple OS: https://snapcraft.io/zellij
 # downloading instructions for Ubuntu: https://snapcraft.io/install/zellij/ubuntu
 sudo snap install zellij --classic                  # a better TMUX
@@ -55,8 +61,17 @@ sudo apt-get install neofetch                       # info about OS distro
 cargo install rusty-rain                            # a CMatrix clone in Rust
 
 
+
+sudo apt install colortest
+
+
 sudo snap install discord
 sudo snapp install spotify
+
+
+
+git config --user.name='TrifanBogdan24'
+git config --user.email=''		# my email
 ```
 
 
@@ -103,7 +118,23 @@ alias periodic-table='npx periodic-table-cli'
 alias world-map='telnet mapscii.me'
 alias recent-files='ls -ltrh'
 alias cmd-help='compgen -c | fzf | xargs man'
+alias ascii_colors='colortest-16b'
 alias hacking-terminal='docker run --rm -it bcbcarl/hollywood'       # `CTRL-C` and `exit` to stop
+
+
+                                            # escapes anotether alias
+alias git_reset_last_commit="git reset --hard \$(git log | grep 'commit' awk 'NR==1 {print $2}')"
+
+alias git_delete_last_commit="git reset --soft HEAD~1 && git push -f origin"
+
+
+git_rename_last_commit() {
+	# `$1` = arg 1 = new commit message
+	git commit --ammend -m $1
+	git push -f origin
+}
+
+
 
 
 # opens IDEs in current directory
@@ -112,7 +143,22 @@ alias open-rustrover='rustrover . &> /dev/null &'
 alias open-intellij='intellij-idea-ultimate . &> /dev/null &'
 alias open-clion='clion . &> /dev/null &'
 
+alias ip='ip -c'		# colored command
 
+
+
+
+# colored manual page
+man() {
+    LESS_TERMCAP_mb=$'\e[1;34m'   \
+    LESS_TERMCAP_md=$'\e[1;32m'   \
+    LESS_TERMCAP_so=$'\e[1;33m'   \
+    LESS_TERMCAP_us=$'\e[1;4;31m' \
+    LESS_TERMCAP_me=$'\e[0m'      \
+    LESS_TERMCAP_se=$'\e[0m'      \
+    LESS_TERMCAP_ue=$'\e[0m'      \
+    command man "$@"
+}
 
 
 
