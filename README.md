@@ -1,10 +1,35 @@
-# My `Ubuntu` Setup
+# My `Ubuntu` `bash` Setup and Ricing
 
 
 Here is my configuration for the `Linux UBUNTU` terminal.
 
 🔁 Take it as a **backup** and easy way to transition from one PC or VM to another.
 
+
+
+`Table of contents`
+
+- [My `Ubuntu` `bash` Setup and Ricing](#my-ubuntu-bash-setup-and-ricing)
+	- [What does `ricing` mean?](#what-does-ricing-mean)
+	- [Installing commands](#installing-commands)
+	- [Configuration File (`~/.bashrc`)](#configuration-file-bashrc)
+	- [Terminal Customizations](#terminal-customizations)
+		- [Nerd Fonts](#nerd-fonts)
+		- [Configurable Terminal Prompt (`oh my posh`)](#configurable-terminal-prompt-oh-my-posh)
+	- [Uninstalling Commands](#uninstalling-commands)
+
+
+## What does `ricing` mean?
+---
+In the context of terminal configuration, `ricing` refers to the practice of 
+customizing and beautifying the appearance and functionality of the terminal and other elements of the desktop environment.
+
+The term originally comes from the custom car culture,
+where `rice` was used to describe modifying cars with flashy but often unnecessary 
+features.
+
+In the tech world, ricing has been adopted to describe the process
+of making a system look aesthetically pleasing and unique.
 
 
 
@@ -113,7 +138,9 @@ alias github_token="echo $GITHUB_TOKEN"
 
 
 alias chrome='google-chrome &> /dev/null &'
-alias youtube='open https://www.youtube.com/ &> /dev/null'          # opens YouTube in Google Chrome
+alias youtube='open https://www.youtube.com/ &> /dev/null'          # opens YouTube in web browser
+alias chatgpt='open https://chatgpt.com/ &> /dev/null'				# opens ChatGpt in web browser
+
 alias periodic-table='npx periodic-table-cli'
 alias world-map='telnet mapscii.me'
 alias recent-files='ls -ltrh'
@@ -245,6 +272,215 @@ neofetch  --ascii_distro arch
 $ source ~/.bashrc
 $ reset
 ```
+
+
+
+## Terminal Customizations
+
+Teminal -> Three Horizontal Bars -> Preferences -> Unnamed 
+-> Colors -> Background -> `#0D0324`
+
+
+Terminal -> Three Horizontal Bars -> Preferences -> Unnnamed -> Text -> Cursor shape -> `I-Beam`
+
+
+Terminal -> Three Horizontal Bars -> Preferences -> Unnamed -> Cursor blinking -> `Enable`
+
+
+
+
+### Nerd Fonts
+---
+
+> Fonts: <https://www.nerdfonts.com/font-downloads>
+> 
+> Also see: <https://www.nerdfonts.com/>
+
+
+```bash
+$ cd ~/Downloads/
+$ mkdir nerd-fonts-helper-dir
+
+$ touch nerd_font_downloader.sh
+$ chmod +x nerd_font_downloader.sh
+$ nano -l nerd_font_downloader.sh		# text editor
+```
+
+
+```bash
+#!/bin/bash
+
+# nerd_font_downloader.sh
+
+nr_args=$#
+
+if [[ $nr_args -ne 1 ]]; then
+	echo "Err: the script expects only a single argument: the URL of the font"
+	echo "See fonts at: https://www.nerdfonts.com/font-downloads"
+	exit 1
+fi
+
+
+
+URL=$1
+
+wget $URL -O nerd-fonts.zip
+unzip nerd-fonts.zip -d nerd-fonts
+mkdir -p ~/.local/share/fonts
+mv nerd-fonts/* ~/.local/share/fonts/
+rm -rf nerd-fonts nerd-fonts.zip
+fc-cache -fv
+```
+
+
+
+```bash
+$ # it might not work (be aware of the versions of the fonts)
+$ ./nerd_font_downloader.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/InconsolataGo.zip
+```
+
+
+### Configurable Terminal Prompt (`oh my posh`)
+---
+
+
+
+
+`oh my posh` official website: <https://ohmyposh.dev/>
+
+
+```bash
+$ curl -s https://ohmyposh.dev/install.sh | sudo bash -s
+
+$  mkdir -p ~/.poshthemes
+```
+
+
+
+`oh my posh` themes: <https://ohmyposh.dev/docs/themes>
+
+
+> All these themes work only in [`Nerd Fonts`](https://www.nerdfonts.com/font-downloads)
+
+
+> TODO: how to add `Nerd Fonts` in `VS Code` terminal
+
+
+
+My favourite themes:
+
+- [atomic](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/atomic.omp.json)
+
+![atomic](https://ohmyposh.dev/assets/images/atomic-4a8859edab28466efd26209d93d3dcc9.png)
+
+```bash
+# Installing the theme
+wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/atomic.omp.json -O ~/.poshthemes/atomic.omp.json
+
+# Setting the prompt
+eval "$(oh-my-posh init bash --config ~/.poshthemes/atomic.omp.json)"
+```
+
+- [blue-owl](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/blue-owl.omp.json)
+
+![blue-owl](https://ohmyposh.dev/assets/images/blue-owl-c1301b52c4ef00caee7fb59cc8e3e66e.png)
+
+```bash
+# Installing the theme
+wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/blue-owl.omp.json -O ~/.poshthemes/blue-owl.omp.json
+
+# Setting the prompt
+eval "$(oh-my-posh init bash --config ~/.poshthemes/blue-owl.omp.json)"
+```
+
+
+- [blueish](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/blueish.omp.json)
+
+![blueish](https://ohmyposh.dev/assets/images/blueish-411e99ae6fe1ad3a08d8e829fe57f5ec.png)
+
+
+```bash
+# Installing the theme
+wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/blueish.omp.json -O ~/.poshthemes/blueish.omp.json
+
+# Setting the prompt
+eval "$(oh-my-posh init bash --config ~/.poshthemes/blueish.omp.json)"
+```
+
+
+- [clean-detailed](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/clean-detailed.omp.json)
+
+
+![clean-detailed](https://ohmyposh.dev/assets/images/clean-detailed-b39a14070814882ee786b9d015632e83.png)
+
+
+```bash
+# Installing the theme
+wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/clean-detailed.omp.json -O ~/.poshthemes/clean-detailed.omp.json
+
+# Setting the prompt
+eval "$(oh-my-posh init bash --config ~/.poshthemes/clean-detailed.omp.json)"
+```
+
+
+
+- [kali](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/kali.omp.json)
+
+![kali](https://ohmyposh.dev/assets/images/kali-d44eb156ab7a1ddc7c8574115be6686b.png)
+
+
+```bash
+# Installing the theme
+wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/kali.omp.json -O ~/.poshthemes/kali.omp.json
+
+# Setting the prompt
+eval "$(oh-my-posh init bash --config ~/.poshthemes/kali.omp.json)"
+```
+
+
+- [powerlevel10k_modern](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/powerlevel10k_modern.omp.json)
+
+![powerlevel10k_modern](https://ohmyposh.dev/assets/images/powerlevel10k_modern-5acbb3cc704b3ba354038fd761624cbb.png)
+
+
+```bash
+# Installing the theme
+wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/powerlevel10k_modern.omp.json -O ~/.poshthemes/powerlevel10k_modern.omp.json
+
+# Setting the prompt
+eval "$(oh-my-posh init bash --config ~/.poshthemes/powerlevel10k_modern.omp.json)"
+```
+
+
+
+- [powerlevel10k_rainbow](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/powerlevel10k_rainbow.omp.json)
+  
+![powerlevel10k_rainbow](https://ohmyposh.dev/assets/images/powerlevel10k_rainbow-d0f7a57430232abfc03075450c8f7306.png)
+
+
+```bash
+# Installing the theme
+wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/powerlevel10k_rainbow.omp.json -O ~/.poshthemes/powerlevel10k_rainbow.omp.json
+
+eval "$(oh-my-posh init bash --config ~/.poshthemes/powerlevel10k_rainbow.omp.json)"
+```
+
+
+- [quick-term](https://ohmyposh.dev/assets/images/quick-term-2727301345826f64b6c74aef0e4e07cc.png)
+
+![quick-term](https://ohmyposh.dev/assets/images/quick-term-2727301345826f64b6c74aef0e4e07cc.png)
+
+
+
+```bash
+# Installing the theme
+wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/quick-term.omp.json -O ~/.poshthemes/quick-term.omp.json
+
+
+# Setting the prompt
+eval "$(oh-my-posh init bash --config ~/.poshthemes/quick-term.omp.json)"
+```
+
 
 
 ## Uninstalling Commands
