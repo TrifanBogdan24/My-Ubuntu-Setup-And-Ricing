@@ -12,9 +12,10 @@ Here is my configuration for the `Linux UBUNTU` terminal.
 - [My `Ubuntu` `bash` Setup and Ricing](#my-ubuntu-bash-setup-and-ricing)
 	- [What does `ricing` mean?](#what-does-ricing-mean)
 	- [Installing commands](#installing-commands)
-	- [Configuration File (`~/.bashrc`)](#configuration-file-bashrc)
+	- [Configuration File 💾 (`~/.bashrc`)](#configuration-file--bashrc)
 	- [Terminal Customizations](#terminal-customizations)
 		- [Nerd Fonts](#nerd-fonts)
+		- [Setting Nerd Fonts](#setting-nerd-fonts)
 		- [Configurable Terminal Prompt (`oh my posh`)](#configurable-terminal-prompt-oh-my-posh)
 	- [Uninstalling Commands](#uninstalling-commands)
 
@@ -103,7 +104,7 @@ git config --user.email=''		# my email
 
 
 
-## Configuration File (`~/.bashrc`)
+## Configuration File 💾 (`~/.bashrc`)
 
 
 In order for the following changes to be persistent over time (restarting the terminal)
@@ -277,14 +278,14 @@ $ reset
 
 ## Terminal Customizations
 
-Teminal -> Three Horizontal Bars -> Preferences -> Unnamed 
+⚙️: Teminal -> Three Horizontal Bars -> Preferences -> Unnamed 
 -> Colors -> Background -> `#0D0324`
 
 
-Terminal -> Three Horizontal Bars -> Preferences -> Unnnamed -> Text -> Cursor shape -> `I-Beam`
+⚙️: Terminal -> Three Horizontal Bars -> Preferences -> Unnnamed -> Text -> Cursor shape -> `I-Beam`
 
 
-Terminal -> Three Horizontal Bars -> Preferences -> Unnamed -> Cursor blinking -> `Enable`
+⚙️: Terminal -> Three Horizontal Bars -> Preferences -> Unnamed -> Cursor blinking -> `Enable`
 
 
 
@@ -292,9 +293,9 @@ Terminal -> Three Horizontal Bars -> Preferences -> Unnamed -> Cursor blinking -
 ### Nerd Fonts
 ---
 
-> Fonts: <https://www.nerdfonts.com/font-downloads>
+> 🌐 Fonts: <https://www.nerdfonts.com/font-downloads>
 > 
-> Also see: <https://www.nerdfonts.com/>
+> 🌐 Also see: <https://www.nerdfonts.com/>
 
 
 ```bash
@@ -310,7 +311,7 @@ $ nano -l nerd_font_downloader.sh		# text editor
 ```bash
 #!/bin/bash
 
-# nerd_font_downloader.sh
+# download_nerd_font.sh
 
 nr_args=$#
 
@@ -334,10 +335,33 @@ fc-cache -fv
 
 
 
+
 ```bash
 $ # it might not work (be aware of the versions of the fonts)
 $ ./nerd_font_downloader.sh https://github.com/ryanoasis/nerd-fonts/releases/download/v3.2.1/InconsolataGo.zip
 ```
+
+
+
+> 📥 Script to install a single nerd font, being given an URL: [scripts/download_nerd_font.sh](scripts/download_nerd_font.sh)
+>
+> 📥 Script to install all single nerd fonts: [scripts/install_all_nerd_fonts.sh](scripts/install_all_nerd_fonts.sh)
+
+
+
+### Setting Nerd Fonts
+---
+
+
+1. In `Ubuntu` terminal:
+	⚙️: Terminal -> Three Horizontal Bars -> Preferences -> Text -> Check the box for `Custom font` and search for a **Nerd font**
+
+
+2. In `VS Code` terminal:
+	⚙️: Open `VS Code` -> `CTRL ,` -> Search for `terminal integrated font` -> type a **Nerd font** (some might not work well)
+
+
+
 
 
 ### Configurable Terminal Prompt (`oh my posh`)
@@ -346,7 +370,7 @@ $ ./nerd_font_downloader.sh https://github.com/ryanoasis/nerd-fonts/releases/dow
 
 
 
-`oh my posh` official website: <https://ohmyposh.dev/>
+🌐 `oh my posh` official website: <https://ohmyposh.dev/>
 
 
 ```bash
@@ -357,17 +381,33 @@ $  mkdir -p ~/.poshthemes
 
 
 
-`oh my posh` themes: <https://ohmyposh.dev/docs/themes>
+🌐 `oh my posh` themes: <https://ohmyposh.dev/docs/themes>
 
 
 > All these themes work only in [`Nerd Fonts`](https://www.nerdfonts.com/font-downloads)
+>
+> You have to set **terminal's font** for each `IDE` you use.
+>
+> Some fonts migth not work well in `IDE`s.
 
 
-> TODO: how to add `Nerd Fonts` in `VS Code` terminal
 
 
 
-My favourite themes:
+> 📥 Installing all `oh my posh` themes: [scripts/install_all_prompt_themes.sh](scripts/install_all_prompt_themes.sh)
+
+
+
+
+**My favourite themes**:
+
+
+> Setting `alias` for favourite color themes: [cripts/alias_fav_posh_themes.sh](scripts/alias_fav_posh_themes.sh)
+>
+> For persistance, place the code in `~/.bashrc` and use the following command: `source ~/.bashrc`
+
+
+
 
 - [atomic](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/atomic.omp.json)
 
