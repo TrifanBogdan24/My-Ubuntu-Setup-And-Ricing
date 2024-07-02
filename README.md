@@ -17,7 +17,10 @@ Here is my configuration for the `Linux UBUNTU` terminal.
 		- [Nerd Fonts](#nerd-fonts)
 		- [Setting Nerd Fonts](#setting-nerd-fonts)
 		- [Configurable Terminal Prompt (`oh my posh`)](#configurable-terminal-prompt-oh-my-posh)
-	- [Uninstalling Commands](#uninstalling-commands)
+	- [Background Image of the terminal](#background-image-of-the-terminal)
+		- [📥 Instalilling a `Terminal Emulator`](#-instalilling-a-terminal-emulator)
+		- [🖼️ Setting the background image](#️-setting-the-background-image)
+	- [Uninstalling Utilities](#uninstalling-utilities)
 
 
 ## What does `ricing` mean?
@@ -263,8 +266,12 @@ PS1='\[\e[1;39m\](\[\e[0;0m\] \[\e[1;34m\]\u\[\e[0;0m\]\[\e[1;39m\]@\[\e[0m\]\[\
 
 
 
+# displaying the logo of Arch Linux
+# neofetch --ascii_distro arch
 
-neofetch  --ascii_distro arch
+
+# the below command will display a logo of Ubuntu Linux
+# neofetch --ascii_distro ubuntu --ascii_colors 4 7 --colors 6 7 7 6 7 7
 ```
 
 
@@ -523,8 +530,51 @@ eval "$(oh-my-posh init bash --config ~/.poshthemes/quick-term.omp.json)"
 
 
 
-## Uninstalling Commands
 
+
+> I find `quick-term` to be the most suitable for me.
+>
+> So, the line `eval "$(oh-my-posh init bash --config ~/.poshthemes/quick-term.omp.json)"`
+> will be inlcuded at the end of the configuration file `~/.bashrc`
+
+
+
+
+## Background Image of the terminal
+---
+
+
+
+### 📥 Instalilling a `Terminal Emulator`
+---
+
+For this task, we will use a `Terminal Emulator`,
+since the built-in console does not support background images.
+
+
+
+Show applications (a square of 9 dots in right lower corner) ->
+search for `Ubuntu Software` -> start typing `Xfce Terminal` -> 
+install **Terminal Emulator**.
+
+
+### 🖼️ Setting the background image
+---
+
+Open `Xfce Terminal` -> Bar -> `Edit` -> `Preferences...` -> Appearance -> Background -> select `Background image` and provide a path to the `File:` field.
+
+
+> Also, in order for the promt to work, set a `Nerd Font`
+
+
+
+
+
+
+
+
+## Uninstalling Utilities
+---
 
 Deleting a command is as simple as installing it,
 the only difference in the one-liner is a word specified to the package manager.
