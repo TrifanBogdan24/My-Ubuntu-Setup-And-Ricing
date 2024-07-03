@@ -161,6 +161,13 @@ sudo snapp install spotify
 
 
 
+sudo npm install -g birthday			# birthday tracker
+# option (manual): birthday --help
+# adding new birthday: birthday -n coco gauff -d 13/03/2004
+# displaying the table of birthdays: birthday
+
+
+
 git config --user.name='TrifanBogdan24'
 git config --user.email=''		# my email
 ```
@@ -209,10 +216,13 @@ alias chatgpt='open https://chatgpt.com/ &> /dev/null'				# opens ChatGpt in web
 
 alias periodic-table='npx periodic-table-cli'
 alias world-map='telnet mapscii.me'
-alias recent-files='ls -ltrh'
+alias ls-one-line='ls -1'
+alias ls-recent-files='ls -altrh'
 alias cmd-help='compgen -c | fzf | xargs man'
 alias ascii_colors='colortest-16b'
 alias hacking-terminal='docker run --rm -it bcbcarl/hollywood'       # `CTRL-C` and `exit` to stop
+alias hollywood='docker run --rm -it bcbcarl/hollywood'       # `CTRL-C` and `exit` to stop
+
 
 
                                             # escapes anotether alias
@@ -922,6 +932,8 @@ cargo uninstall bat
 cargo uninstall lsd
 cargo uninstall rusty-rain
 cargo uninstall tokei
+
+sudo npm uninstall -g birthday
 
 # unsetting git info
 git config --global --unset user.name
