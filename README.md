@@ -63,7 +63,7 @@ of making a system look aesthetically pleasing and unique.
 | **Update Package Manager**         | `sudo apt update`                     | `sudo apt-get update`                | `sudo snap refresh`                    | `sudo apt update`                        |
 | **Update All Packages**            | `sudo apt upgrade`                    | `sudo apt-get upgrade`               | `sudo snap refresh`                    | `sudo apt upgrade`                       |
 | **Install a Package**              | `sudo apt install <package>`          | `sudo apt-get install <package>`     | `sudo snap install <package>`          | `sudo dpkg -i <package>.deb`             |
-| **List All Packages**              | `apt list --installed`                | `apt-get list --installed`           | `snap list`                            | `dpkg --list`                            |
+| **List All Packages**              | `apt list --installed`                | `apt-get list --installed`           | `snap list`                            | `dpkg --list`                          .  |
 | **Get Version of a Package**       | `apt show <package>`                  | `apt-cache policy <package>`         | `snap info <package>`                  | `dpkg -s <package>`                      |
 | **Delete a Package**               | `sudo apt remove <package>`           | `sudo apt-get remove <package>`      | `sudo snap remove <package>`           | `sudo dpkg -r <package>`                 |
 
@@ -142,6 +142,10 @@ sudo apt install fd-find							# better find command
 cargo install hurl
 
 cargo install rusty-rain                            # a CMatrix clone in Rust
+
+sudo apt install exa								# a modern replacement for ls
+# Advice: place in `~/.bashrc`: alias lsc=exa
+
 
 cargo install lsd									# colorfull ls
 cargo install bat									# collor appealing cat
@@ -910,6 +914,8 @@ sudo apt-get remove neofetch
 
 sudo snap remove discord
 sudo snap remove spotify
+
+sudo snap remove exa
 
 cargo remove hurl
 cargo uninstall bat
