@@ -18,10 +18,14 @@ Here is my configuration for the `Linux UBUNTU` terminal.
 		- [My favourite Nerd Fonts:](#my-favourite-nerd-fonts)
 		- [Setting Nerd Fonts](#setting-nerd-fonts)
 		- [Configurable Terminal Prompt (`oh my posh`)](#configurable-terminal-prompt-oh-my-posh)
-	- [Background Image of the terminal](#background-image-of-the-terminal)
+	- [🏽 Background Image of the terminal](#-background-image-of-the-terminal)
 		- [📥 Instalilling a `Terminal Emulator` (`Xfce`)](#-instalilling-a-terminal-emulator-xfce)
 		- [🖼️ Setting the background image in `Xfce Terminal`](#️-setting-the-background-image-in-xfce-terminal)
-	- [Uninstalling Utilities](#uninstalling-utilities)
+	- [🗄️ `DNS` (Domain Name Server)](#️-dns-domain-name-server)
+		- [🌐 What is `DNS`](#-what-is-dns)
+		- [⚙️ Setting `DNS`](#️-setting-dns)
+		- [❗⚠️ Troubleshooting `DNS` configuration](#️-troubleshooting-dns-configuration)
+	- [🗑️ Uninstalling Utilities](#️-uninstalling-utilities)
 
 
 ## What does `ricing` mean?
@@ -559,7 +563,7 @@ eval "$(oh-my-posh init bash --config ~/.poshthemes/quick-term.omp.json)"
 
 
 
-## Background Image of the terminal
+## 🏽 Background Image of the terminal
 ---
 
 
@@ -609,10 +613,193 @@ Open `Xfce Terminal` -> Bar -> `Edit` -> `Preferences...` -> Appearance -> Backg
 
 
 
+## 🗄️ `DNS` (Domain Name Server)
+---
 
 
 
-## Uninstalling Utilities
+### 🌐 What is `DNS`
+---
+
+> `DNS` is an Internet protocol that maps `URL`s (Uniform Resource Locators) or domain names to `IP` addresses.
+> This process in essential because while humans find it
+> easier to remember and use domain names, like [www.example.com](https://www.example.com/),
+> computers and network devices use `IP` addresses (like `192.0.2.1` to identify each other on the internet).
+
+
+
+Useful links:
+- Known `DNS` providers: https://adguard-dns.io/kb/general/dns-providers/
+
+- `DNS` filtering: https://adguard-dns.io/kb/general/dns-filtering/
+
+
+
+> I use the following `DNS` `IP`s: `94.140.14.15` and `94.140.15.16`
+
+
+
+### ⚙️ Setting `DNS`
+---
+
+
+> Using the `GUI` of `Ubuntu`: <https://phoenixnap.com/kb/ubuntu-dns-nameservers>
+
+
+
+I don't recommend the above link, but it's just in case.
+
+Let's be professional and use the terminal 👨🏻‍💻.
+
+
+
+```bash
+$ cat /etc/resolv.conf
+# This is /run/systemd/resolve/stub-resolv.conf managed by man:systemd-resolved(8).
+# Do not edit.
+#
+# This file might be symlinked as /etc/resolv.conf. If you're looking at
+# /etc/resolv.conf and seeing this text, you have followed the symlink.
+#
+# This is a dynamic resolv.conf file for connecting local clients to the
+# internal DNS stub resolver of systemd-resolved. This file lists all
+# configured search domains.
+#
+# Run "resolvectl status" to see details about the uplink DNS servers
+# currently in use.
+#
+# Third party programs should typically not access this file directly, but only
+# through the symlink at /etc/resolv.conf. To manage man:resolv.conf(5) in a
+# different way, replace this symlink by a static file or a different symlink.
+#
+# See man:systemd-resolved.service(8) for details about the supported modes of
+# operation for /etc/resolv.conf.
+
+nameserver 127.0.0.53
+options edns0 trust-ad
+search .
+
+```
+
+
+
+> 👉 Notice that `/etc/resolv.conf` is a **symbolic link**
+> to another configuration file, **in this case**, `/run/systemd/resolve/stub-resolv.conf`
+> 
+> 📢 Also notice the comment `# Do not edit`
+
+
+
+
+Since `/etc/resolv.conf` is managed by `systemd-resolved`
+and is **symlinked** to `/run/systemd/resolve/stub-resolv.conf`,
+the `DNS` configuration must be updated using the `systemd-resolved` **configuration file**.
+
+
+```bash
+$ sudo nano -l /etc/systemd/resolved.conf
+```
+
+
+**Uncomment** and **set** the `DNS` and `FallbackDNS` lines
+with desired DNS servers. For example:
+
+```
+[Resolve]
+DNS=94.140.14.15 94.140.15.16
+FallbackDNS=8.8.8.8 8.8.4.4 1.1.1.1 1.0.0.1
+```
+
+
+
+```bash
+$ sudo systemctl restart systemd-resolved
+$ resolvectl status
+Global
+           Protocols: -LLMNR -mDNS -DNSOverTLS DNSSEC=no/unsupported
+    resolv.conf mode: stub
+         DNS Servers: 94.140.14.15 94.140.15.16
+Fallback DNS Servers: 8.8.8.8 8.8.4.4 1.1.1.1 1.0.0.1
+```
+
+
+
+
+> An alternative to `resolvectl status` could be `resolvectl dns`:
+```bash
+$ resolvectl dns
+Global: 94.140.14.15 94.140.15.16
+Link 2 (enp1s0): 94.140.14.15 94.140.15.16
+Link 3 (wlp2s0): 8.8.8.8 1.1.1.1
+Link 4 (docker0):
+```
+
+
+
+> The `FallbackDNS` entries are optional and will be used if the primary DNS servers are unreachable.
+
+
+
+
+### ❗⚠️ Troubleshooting `DNS` configuration
+
+> If there are errors at setting **global** `DNS`
+> configure the **interfaces**, otherwise skip this part.
+
+
+If it appears that the `DNS` setting for specific network interfaces
+(`enp1s0` and `wlp2s0`) might not be using the global `DNS`
+server, here is the solution:
+
+
+1. Step 1: Clear Link-Specific `DNS` Settings
+```bash
+$ sudo resolvectl dns enp1s0 94.140.14.15 94.140.15.16
+$ sudo resolvectl dns wlp2s0 94.140.14.15 94.140.15.16
+```
+2. Step 2: Verify the `DNS` Configuration
+```bash
+$ resolvectl status
+```
+
+
+3. Step 3: Update Network Manager Configuration (if applicable)
+
+If you're using NetworkManager,
+it might override systemd-resolved settings.
+You can update the DNS configuration in NetworkManager.
+
+```bash
+$ sudo nano /etc/NetworkManager/NetworkManager.conf
+```
+
+Add the following lines (if not already present):
+```
+[main]
+dns=systemd-resolved
+```
+
+
+Restart NetworkManager:
+```bash
+$ sudo systemctl restart NetworkManager
+```
+
+
+4. Step 4: Ensure /etc/resolv.conf is Symlinked Correctly
+```bash
+sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
+```
+
+
+
+5. Step 5: Recheck the Status
+```bash
+$ resolvectl status
+```
+
+
+## 🗑️ Uninstalling Utilities
 ---
 
 Deleting a command is as simple as installing it,
