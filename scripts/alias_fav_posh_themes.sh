@@ -12,5 +12,5 @@ fav_posh_themes=(
 
 
 for theme in "${fav_posh_themes[@]}" ; do
-    alias "promt-theme-$theme"="eval \"\$(oh-my-posh init bash --config ~/.poshthemes/$theme.omp.json)\""
+    alias "prompt-theme-$theme"="eval \"\$(oh-my-posh init bash --config ~/.poshthemes/$theme.omp.json)\""
 done

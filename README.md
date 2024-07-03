@@ -55,6 +55,30 @@ of making a system look aesthetically pleasing and unique.
 
 
 
+<!-- Package Managers -->
+
+| Task                               | `apt`                                 | `apt-get`                            | `snap`                                 | `dpkg`                                   |
+|------------------------------------|---------------------------------------|--------------------------------------|----------------------------------------|------------------------------------------|
+| **Install Package Manager**        | Pre-installed                         | Pre-installed                        | `sudo apt install snapd`               | Pre-installed                           |
+| **Update Package Manager**         | `sudo apt update`                     | `sudo apt-get update`                | `sudo snap refresh`                    | `sudo apt update`                        |
+| **Update All Packages**            | `sudo apt upgrade`                    | `sudo apt-get upgrade`               | `sudo snap refresh`                    | `sudo apt upgrade`                       |
+| **Install a Package**              | `sudo apt install <package>`          | `sudo apt-get install <package>`     | `sudo snap install <package>`          | `sudo dpkg -i <package>.deb`             |
+| **List All Packages**              | `apt list --installed`                | `apt-get list --installed`           | `snap list`                            | `dpkg --list`                            |
+| **Get Version of a Package**       | `apt show <package>`                  | `apt-cache policy <package>`         | `snap info <package>`                  | `dpkg -s <package>`                      |
+| **Delete a Package**               | `sudo apt remove <package>`           | `sudo apt-get remove <package>`      | `sudo snap remove <package>`           | `sudo dpkg -r <package>`                 |
+
+---
+
+| Task                               | `cargo`                                  | `pip`/`pip3`                                 | `npm`                                  |
+|------------------------------------|------------------------------------------|----------------------------------------------|---------------------------------------|
+| **Install Package Manager**        | `sudo apt install cargo` or `curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs \| sh` | `sudo apt install python-pip` (for pip), `sudo apt install python3-pip` (for pip3) | `sudo apt install npm`                |
+| **Update Package Manager**         | `cargo install-update -a`                | Not applicable (managed by Python installer) | `npm install -g npm@latest`          |
+| **Update All Packages**            | `cargo install-update -a`                | `pip list --outdated` + `pip install --upgrade <package>`| `npm update -g`                     |
+| **Install a Package**              | `cargo install <package>`                | `pip install <package>` (pip for Python 2), `pip3 install <package>` (pip for Python 3)| `npm install <package>`              |
+| **List All Packages**              | `cargo install --list`                   | `pip list` or `pip3 list`                    | `npm list -g --depth=0`              |
+| **Get Version of a Package**       | `cargo search <package>` or `cargo --version`| `pip show <package>` or `pip3 show <package>`| `npm list <package> -g`              |
+| **Delete a Package**               | `cargo uninstall <package>`              | `pip uninstall <package>` or `pip3 uninstall <package>`| `npm uninstall -g <package>`         |
+
 
 
 
@@ -67,7 +91,16 @@ sudo apt install google-chrome-stable
 
 sudo apt install xfce4-terminal		# terminal emulator (for background image)
 
+
+# Please see oficial Cargo Rust installation:
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env		# place it in ~/.bashrc
+
+
+
 sudo apt install ripgrep
+cargo install ripgrep		# cargo alternative (will install `rg` command)
+
 sudo apt install locate
 sudo apt install fd-find
 sudo apt install fzf        # fuzzy finder
@@ -83,9 +116,11 @@ sudo apt install bpytop		# resource monitor that shows usage and stats
 # downloading instructions for multiple OS: https://snapcraft.io/zellij
 # downloading instructions for Ubuntu: https://snapcraft.io/install/zellij/ubuntu
 sudo snap install zellij --classic                  # a better TMUX
+# cargo install zellij								# alternative
 
 sudo apt install nano								# text editor
 sudo snap install helix --classic                   # modal text editor
+# cargo install helix								# alternative
 
 sudo snap install code --classic					# VS Code IDE
 sudo snap install intellij-idea-ultimate --classic  # IDE for Java, Scala
@@ -95,9 +130,23 @@ sudo snap install clion --classic                   # IDE for C/C++
 sudo snap install onefetch  # info about GIT REPO
 sudo apt-get install neofetch                       # info about OS distro
 
+
+
+sudo apt install fd-find							# better find command
+
+
 # downloading instructions: https://github.com/cowboy8625/rusty-rain.git
+
+
+# A HTTP Test Tool: https://hurl.dev/player.html?id=hurl&speed=3 
+cargo install hurl
+
 cargo install rusty-rain                            # a CMatrix clone in Rust
 
+cargo install lsd									# colorfull ls
+cargo install bat									# collor appealing cat
+
+cargo install tokei									# code statistics
 
 
 sudo apt install colortest
@@ -281,6 +330,13 @@ PS1='\[\e[1;39m\](\[\e[0;0m\] \[\e[1;34m\]\u\[\e[0;0m\]\[\e[1;39m\]@\[\e[0m\]\[\
 
 # the below command will display a logo of Ubuntu Linux
 # neofetch --ascii_distro ubuntu --ascii_colors 4 7 --colors 6 7 7 6 7 7
+
+
+# Kali Linux
+# neofetch --ascii_distro kali --colors 6 7 7 6 7
+
+
+neofetch --ascii_distro ubuntu --ascii_colors 4 7 --colors 6 7 7 6 7 7
 ```
 
 
@@ -624,7 +680,7 @@ xfce4-terminal --tab &	# new tab inside of window
 Open `Xfce Terminal` -> Bar -> `Edit` -> `Preferences...` -> Appearance -> Background -> select `Background image` and provide a path to the `File:` field.
 
 
-> Also, in order for the promt to work, set a `Nerd Font`
+> Also, in order for the prompt to work, set a `Nerd Font`
 
 
 
@@ -826,6 +882,8 @@ the only difference in the one-liner is a word specified to the package manager.
 
 
 ```sh
+rustup self uninstall			# uninstall cargo
+
 sudo apt remove xfce4-terminal
 
 sudo apt remove cmatrix
@@ -836,8 +894,15 @@ sudo snap remove clion
 
 sudo apt remove nano
 sudo snap remove helix
+# cargo uninstall helix			# if installed with cargo
 
 sudo snap remove zellij
+# cargo uninstall zellij		# if installed with cargo
+
+
+cargo uninstall ripgrep			# rg command
+
+sudo apt remove fd-find
 
 sudo snap remove onefetch
 sudo apt-get remove neofetch
@@ -845,4 +910,14 @@ sudo apt-get remove neofetch
 
 sudo snap remove discord
 sudo snap remove spotify
+
+cargo remove hurl
+cargo uninstall bat
+cargo uninstall lsd
+cargo uninstall rusty-rain
+cargo uninstall tokei
+
+# unsetting git info
+git config --global --unset user.name
+git config --global --unset user.email
 ```
