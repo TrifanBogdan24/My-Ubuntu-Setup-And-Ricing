@@ -11,7 +11,7 @@ if [[ $exit_code != 0 ]] ; then
 fi
 
 
-curl https://www.nerdfonts.com/font-downloads | grep -o -E 'href\s*=\s*"https://github.com/[^/]+/nerd-fonts/releases/download/[^"]+\.zip"' > urls.txt
+curl https://www.nerdfonts.com/font-downloads | grep -o -E 'href\s*=\s*"https://github.com/[^/]+/nerd-fonts/releases/download/[^"]+\.zip"' | uniq > urls.txt
 
 
 # deleting text around the actual URL

@@ -15,6 +15,7 @@ Here is my configuration for the `Linux UBUNTU` terminal.
 	- [💾 Configuration File (`~/.bashrc`)](#-configuration-file-bashrc)
 	- [Terminal Customizations](#terminal-customizations)
 		- [Nerd Fonts](#nerd-fonts)
+		- [My favourite Nerd Fonts:](#my-favourite-nerd-fonts)
 		- [Setting Nerd Fonts](#setting-nerd-fonts)
 		- [Configurable Terminal Prompt (`oh my posh`)](#configurable-terminal-prompt-oh-my-posh)
 	- [Background Image of the terminal](#background-image-of-the-terminal)
@@ -356,6 +357,21 @@ $ ./nerd_font_downloader.sh https://github.com/ryanoasis/nerd-fonts/releases/dow
 > 📥 Script to install a single nerd font, being given an URL: [scripts/download_nerd_font.sh](scripts/download_nerd_font.sh)
 >
 > 📥 Script to install all single nerd fonts: [scripts/install_all_nerd_fonts.sh](scripts/install_all_nerd_fonts.sh)
+
+
+
+### My favourite Nerd Fonts:
+- `0xProto Nerd Font`
+- `3270 Nerd Font`
+- `CommitMono Nerd Font`
+- `JetBrainsMono Nerd Font`
+- `M+ Nerd Font`
+- `RobotoMono Nerd Font`
+- `Ubuntu Nerd Font`
+- `UbuntuMono Nerd Font`
+- `UbuntuSans Nerd Font`
+- `VictorMono Nerd Font`
+
 
 
 
