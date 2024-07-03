@@ -12,14 +12,14 @@ Here is my configuration for the `Linux UBUNTU` terminal.
 - [My `Ubuntu` `bash` Setup and Ricing](#my-ubuntu-bash-setup-and-ricing)
 	- [What does `ricing` mean?](#what-does-ricing-mean)
 	- [Installing commands](#installing-commands)
-	- [Configuration File 💾 (`~/.bashrc`)](#configuration-file--bashrc)
+	- [💾 Configuration File (`~/.bashrc`)](#-configuration-file-bashrc)
 	- [Terminal Customizations](#terminal-customizations)
 		- [Nerd Fonts](#nerd-fonts)
 		- [Setting Nerd Fonts](#setting-nerd-fonts)
 		- [Configurable Terminal Prompt (`oh my posh`)](#configurable-terminal-prompt-oh-my-posh)
 	- [Background Image of the terminal](#background-image-of-the-terminal)
-		- [📥 Instalilling a `Terminal Emulator`](#-instalilling-a-terminal-emulator)
-		- [🖼️ Setting the background image](#️-setting-the-background-image)
+		- [📥 Instalilling a `Terminal Emulator` (`Xfce`)](#-instalilling-a-terminal-emulator-xfce)
+		- [🖼️ Setting the background image in `Xfce Terminal`](#️-setting-the-background-image-in-xfce-terminal)
 	- [Uninstalling Utilities](#uninstalling-utilities)
 
 
@@ -57,6 +57,9 @@ sudo apt update
 sudo apt install snapd
 
 sudo apt install google-chrome-stable
+
+
+sudo apt install xfce4-terminal		# terminal emulator (for background image)
 
 sudo apt install ripgrep
 sudo apt install locate
@@ -107,7 +110,7 @@ git config --user.email=''		# my email
 
 
 
-## Configuration File 💾 (`~/.bashrc`)
+## 💾 Configuration File (`~/.bashrc`)
 
 
 In order for the following changes to be persistent over time (restarting the terminal)
@@ -545,7 +548,7 @@ eval "$(oh-my-posh init bash --config ~/.poshthemes/quick-term.omp.json)"
 
 
 
-### 📥 Instalilling a `Terminal Emulator`
+### 📥 Instalilling a `Terminal Emulator` (`Xfce`)
 ---
 
 For this task, we will use a `Terminal Emulator`,
@@ -558,7 +561,27 @@ search for `Ubuntu Software` -> start typing `Xfce Terminal` ->
 install **Terminal Emulator**.
 
 
-### 🖼️ Setting the background image
+> Alternative `shell` command:
+```bash
+# Terminal Emulator that enables setting a background image
+sudo apt install xfce4-terminal
+```
+
+
+`Xfce` command for creating a new **window**/**tab**:
+- New **window**: `xfce4-terminal`
+- New **tab**: `xfce4-terminal --tab` (in an existing **window**, otherwise it creates a **window** with two **tabs**)
+
+
+```sh
+xfce4-terminal &		# new window
+xfce4-terminal --tab &	# new tab inside of window
+```
+
+
+
+
+### 🖼️ Setting the background image in `Xfce Terminal`
 ---
 
 Open `Xfce Terminal` -> Bar -> `Edit` -> `Preferences...` -> Appearance -> Background -> select `Background image` and provide a path to the `File:` field.
@@ -583,6 +606,8 @@ the only difference in the one-liner is a word specified to the package manager.
 
 
 ```sh
+sudo apt remove xfce4-terminal
+
 sudo apt remove cmatrix
 sudo snap remove code
 sudo snap remove intellij-idea-ultimate
