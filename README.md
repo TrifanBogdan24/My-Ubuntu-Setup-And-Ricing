@@ -13,13 +13,14 @@ Here is my configuration for the `Linux UBUNTU` terminal.
 	- [What does `ricing` mean?](#what-does-ricing-mean)
 	- [Installing commands](#installing-commands)
 	- [💾 Configuration File (`~/.bashrc`)](#-configuration-file-bashrc)
-	- [Terminal Customizations](#terminal-customizations)
+	- [⚙️ Basic Terminal Customizations](#️-basic-terminal-customizations)
 		- [Nerd Fonts](#nerd-fonts)
 		- [My favourite Nerd Fonts:](#my-favourite-nerd-fonts)
 		- [Setting Nerd Fonts](#setting-nerd-fonts)
 		- [Configurable Terminal Prompt (`oh my posh`)](#configurable-terminal-prompt-oh-my-posh)
-	- [🏽 Background Image of the terminal](#-background-image-of-the-terminal)
+	- [👨🏻‍💻 `Xfce` `Terminal Emulator`](#-xfce-terminal-emulator)
 		- [📥 Instalilling a `Terminal Emulator` (`Xfce`)](#-instalilling-a-terminal-emulator-xfce)
+		- [⚙️ Basic setup for `Xfce Terminal`](#️-basic-setup-for-xfce-terminal)
 		- [🖼️ Setting the background image in `Xfce Terminal`](#️-setting-the-background-image-in-xfce-terminal)
 	- [🗄️ `DNS` (Domain Name Server)](#️-dns-domain-name-server)
 		- [🌐 What is `DNS`](#-what-is-dns)
@@ -291,16 +292,16 @@ $ reset
 
 
 
-## Terminal Customizations
+## ⚙️ Basic Terminal Customizations
 
 ⚙️: Teminal -> Three Horizontal Bars -> Preferences -> Unnamed 
 -> Colors -> Background -> `#0D0324`
 
 
-⚙️: Terminal -> Three Horizontal Bars -> Preferences -> Unnnamed -> Text -> Cursor shape -> `I-Beam`
+⚙️: Terminal -> Three Horizontal Bars -> Preferences -> Unnamed -> Text -> Cursor shape -> `I-Beam`
 
 
-⚙️: Terminal -> Three Horizontal Bars -> Preferences -> Unnamed -> Cursor blinking -> `Enable`
+⚙️: Terminal -> Three Horizontal Bars -> Preferences -> Unnamed -> Text -> Cursor blinking -> `Enable`
 
 
 
@@ -563,7 +564,7 @@ eval "$(oh-my-posh init bash --config ~/.poshthemes/quick-term.omp.json)"
 
 
 
-## 🏽 Background Image of the terminal
+## 👨🏻‍💻 `Xfce` `Terminal Emulator`
 ---
 
 
@@ -597,6 +598,22 @@ sudo apt install xfce4-terminal
 xfce4-terminal &		# new window
 xfce4-terminal --tab &	# new tab inside of window
 ```
+
+
+
+### ⚙️ Basic setup for `Xfce Terminal`
+---
+
+
+⚙️ `Xfce Terminal` -> `Edit` -> `Preferences...` -> Cursor shape -> `I-Beam`
+
+⚙️ `Xfce Terminal` -> `Edit` -> `Preferences...` -> Cursor shape -> check 🗹 `Cursor blinks` box
+
+
+⚙️ `Xfce Terminal` -> `Edit` -> `Preferences...` -> Cursor shape -> check 🗹 `Automatically copy selection to clipboard` box
+
+⚙️ `Xfce Terminal` -> `Edit` -> `Preferences...` -> Cursor shape -> check ☐ `Show unsafe paste dialog` box
+
 
 
 
