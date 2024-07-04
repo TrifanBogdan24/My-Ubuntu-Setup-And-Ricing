@@ -108,7 +108,7 @@ sudo apt install sl         # Steam Locomotive
 sudo apt install cmatrix
 
 
-
+sudo snap install bottom	# a system monitor
 sudo apt install htop		# process viewer
 sudo apt install bpytop		# resource monitor that shows usage and stats
 
