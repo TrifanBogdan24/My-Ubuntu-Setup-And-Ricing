@@ -210,6 +210,8 @@ export GITHUB_TOKEN='my token'      # personal, sensitive info
 alias github_token="echo $GITHUB_TOKEN"
 
 
+alias nano='nano --linenumbers --mouse --tabsize=4'
+
 alias chrome='google-chrome &> /dev/null &'
 alias youtube='open https://www.youtube.com/ &> /dev/null'          # opens YouTube in web browser
 alias chatgpt='open https://chatgpt.com/ &> /dev/null'				# opens ChatGpt in web browser
@@ -224,16 +226,24 @@ alias hacking-terminal='docker run --rm -it bcbcarl/hollywood'       # `CTRL-C` 
 alias hollywood='docker run --rm -it bcbcarl/hollywood'       # `CTRL-C` and `exit` to stop
 
 
+alias git_cheat_sheet='open https://ndpsoftware.com/git-cheatsheet.html#loc=index'
 
                                             # escapes anotether alias
 alias git_reset_last_commit="git reset --hard \$(git log | grep 'commit' awk 'NR==1 {print $2}')"
 
 alias git_delete_last_commit="git reset --soft HEAD~1 && git push -f origin"
 
-
 git_rename_last_commit() {
-	# `$1` = arg 1 = new commit message
-	git commit --ammend -m $1
+	nr_args=$#
+
+	if [[ $# -ne 1 ]] ; then
+		echo "ERR: expects a single argument, the updated message for last commit"
+		# `return` instead of `exit` to avoid exiting the shell session when sourced in a script or terminal
+		return 1
+	fi
+
+	msg=$1
+	git commit --ammend -m $msg
 	git push -f origin
 }
 
@@ -246,7 +256,8 @@ alias open-rustrover='rustrover . &> /dev/null &'
 alias open-intellij='intellij-idea-ultimate . &> /dev/null &'
 alias open-clion='clion . &> /dev/null &'
 
-alias ip='ip -c'		# colored command
+alias lsc=exa			# colored ls cmd
+alias ip='ip -c'		# colored ip cmd
 
 
 
