@@ -224,7 +224,7 @@ alias cmd-help='compgen -c | fzf | xargs man'
 alias ascii_colors='colortest-16b'
 alias hacking-terminal='docker run --rm -it bcbcarl/hollywood'       # `CTRL-C` and `exit` to stop
 alias hollywood='docker run --rm -it bcbcarl/hollywood'       # `CTRL-C` and `exit` to stop
-
+alias sl='sl -e'	# enables `CTRL C` (SIGINT signal)
 
 alias git_cheat_sheet='open https://ndpsoftware.com/git-cheatsheet.html#loc=index'
 
