@@ -103,8 +103,8 @@ cargo install ripgrep		# cargo alternative (will install `rg` command)
 
 sudo apt install locate
 sudo apt install fd-find
-sudo apt install fzf        # fuzzy finder
-sudo apt install sl         # Steam Locomotive
+sudo apt install fzf        # fuzzy finder (telescopde plug-in file finder)
+sudo apt install sl         # Steam Locomotive animation
 sudo apt install cmatrix
 
 
@@ -135,12 +135,17 @@ sudo apt-get install neofetch                       # info about OS distro
 sudo apt install fd-find							# better find command
 
 
-# downloading instructions: https://github.com/cowboy8625/rusty-rain.git
+# spotify in terminal
+snap install spt
+# or
+cargo install spotify-tui
 
 
 # A HTTP Test Tool: https://hurl.dev/player.html?id=hurl&speed=3 
 cargo install hurl
 
+
+# downloading instructions: https://github.com/cowboy8625/rusty-rain.git
 cargo install rusty-rain                            # a CMatrix clone in Rust
 
 sudo apt install exa								# a modern replacement for ls
