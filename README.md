@@ -218,8 +218,8 @@ alias github_token="echo $GITHUB_TOKEN"
 alias nano='nano --linenumbers --mouse --tabsize=4'
 
 alias chrome='google-chrome &> /dev/null &'
-alias youtube='open https://www.youtube.com/ &> /dev/null'          # opens YouTube in web browser
-alias chatgpt='open https://chatgpt.com/ &> /dev/null'				# opens ChatGpt in web browser
+alias youtube='google-chrome https://www.youtube.com/ &> /dev/null &'       	# opens YouTube in web browser (`google-chrome` can be replaced with `open`)
+alias chatgpt='google-chrome https://chatgpt.com/ &> /dev/null &'				# opens ChatGpt in web browser (`google-chrome` can be replaced with `open`)
 
 alias periodic-table='npx periodic-table-cli'
 alias world-map='telnet mapscii.me'
@@ -231,7 +231,7 @@ alias hacking-terminal='docker run --rm -it bcbcarl/hollywood'       # `CTRL-C` 
 alias hollywood='docker run --rm -it bcbcarl/hollywood'       # `CTRL-C` and `exit` to stop
 alias sl='sl -e'	# enables `CTRL C` (SIGINT signal)
 
-alias git_cheat_sheet='open https://ndpsoftware.com/git-cheatsheet.html#loc=index'
+alias git_cheat_sheet='google-chrome https://ndpsoftware.com/git-cheatsheet.html#loc=index &> /dev/null &'	# open Git Cheat Sheet in web browser (`google-chrome` can be replaced with `open`)
 
                                             # escapes anotether alias
 alias git_reset_last_commit="git reset --hard \$(git log | grep 'commit' awk 'NR==1 {print $2}')"
@@ -265,6 +265,46 @@ alias lsc=exa			# colored ls cmd
 alias ip='ip -c'		# colored ip cmd
 
 
+
+
+find_replace_in_file() {
+	nr_args=$#
+	
+	if [[ $nr_args -ne 3 ]] ; then
+		echo "ERR: Invalid number of arguments"
+		echo "Expect the OLDTEXT, the NEWTEXT and the path to the file"
+		return 1
+	fi
+
+	old=$1
+	new=$2
+	file=$3
+	sed -i 's/$old/$new/g' $file
+}
+
+
+
+
+find_replace_text_to_stdout() {
+    nr_args=$#
+
+    if [[ $nr_args -lt 2 || $nr_args -gt 3 ]] ; then
+        echo "ERR: Invalid number of arguments"
+        echo "Expect the OLDTEXT, the NEWTEXT, and optionally the path to the file"
+        return 1
+    fi
+
+    old=$1
+    new=$2
+
+    if [[ $nr_args -eq 3 ]] ; then
+        file=$3
+        sed "s/$old/$new/g" "$file"
+    else
+        # works withe pipes, example: `cat in.txt | sed old new`
+        sed "s/$old/$new/g"
+    fi
+}
 
 
 # colored manual page
