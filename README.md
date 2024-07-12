@@ -11,7 +11,11 @@ Here is my configuration for the `Linux UBUNTU` terminal.
 
 - [My `Ubuntu` `bash` Setup and Ricing](#my-ubuntu-bash-setup-and-ricing)
 	- [What does `ricing` mean?](#what-does-ricing-mean)
-	- [Installing commands](#installing-commands)
+	- [Installing utilities](#installing-utilities)
+		- [`apt` packages installation](#apt-packages-installation)
+		- [`snap` packages installation](#snap-packages-installation)
+		- [`cargo` packages installation](#cargo-packages-installation)
+		- [`npm` packages installation](#npm-packages-installation)
 	- [💾 Configuration File (`~/.bashrc`)](#-configuration-file-bashrc)
 	- [⚙️ Basic Terminal Customizations](#️-basic-terminal-customizations)
 		- [Nerd Fonts](#nerd-fonts)
@@ -44,7 +48,7 @@ of making a system look aesthetically pleasing and unique.
 
 
 
-## Installing commands
+## Installing utilities
 
 > ❌ Do not execute the commands below as a script
 >
@@ -82,99 +86,143 @@ of making a system look aesthetically pleasing and unique.
 
 
 
+### `apt` packages installation
+
+
 ```sh
 sudo apt update
 sudo apt install snapd
 
+sudo apt install cargo
+
+sudo apt install nano
+sudo apt install xfce4-terminal
 sudo apt install google-chrome-stable
 
-
-sudo apt install xfce4-terminal		# terminal emulator (for background image)
-
-
-# Please see oficial Cargo Rust installation:
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-source $HOME/.cargo/env		# place it in ~/.bashrc
-
-
-
-sudo apt install ripgrep
-cargo install ripgrep		# cargo alternative (will install `rg` command)
+# installing `rg` command
+sudo apt install ripgrep					# has `cargo` alternative
 
 sudo apt install locate
 sudo apt install fd-find
-sudo apt install fzf        # fuzzy finder (telescopde plug-in file finder)
-sudo apt install sl         # Steam Locomotive animation
+
+sudo apt install fzf						# has `cargo` alternative
+
+sudo apt install htop
+sudo apt install bpytop
+sudo apt install exa						# has `cargo` alternative
+sudo apt install neofetch					# has `snapd` alternative
+sudo apt install fd-find
+
+sudo apt install colortest
 sudo apt install cmatrix
+sudo apt install sl         				# Steam Locomotive animation
+```
 
 
-sudo snap install bottom	# a system monitor
-sudo apt install htop		# process viewer
-sudo apt install bpytop		# resource monitor that shows usage and stats
 
 
-# downloading instructions for multiple OS: https://snapcraft.io/zellij
-# downloading instructions for Ubuntu: https://snapcraft.io/install/zellij/ubuntu
-sudo snap install zellij --classic                  # a better TMUX
-# cargo install zellij								# alternative
 
-sudo apt install nano								# text editor
-sudo snap install helix --classic                   # modal text editor
-# cargo install helix								# alternative
 
+### `snap` packages installation
+---
+
+
+**Installing `snap` utility**:
+```bash
+sudo apt update
+sudo apt install snapd
+sudo snap refresh							# updating all `snap` packages
+```
+
+
+
+**`snap` packages**:
+```bash
 sudo snap install code --classic					# VS Code IDE
 sudo snap install intellij-idea-ultimate --classic  # IDE for Java, Scala
 sudo snap install rustrover --classic               # IDE for Rust
 sudo snap install clion --classic                   # IDE for C/C++
 
-sudo snap install onefetch  # info about GIT REPO
-sudo apt-get install neofetch                       # info about OS distro
+sudo snap install onefetch					# has `apt` alternative
+sudo snap install bottom
 
-
-
-sudo apt install fd-find							# better find command
-
-
-# spotify in terminal
-snap install spt
-# or
-cargo install spotify-tui
-
-
-# A HTTP Test Tool: https://hurl.dev/player.html?id=hurl&speed=3 
-cargo install hurl
-
-
-# downloading instructions: https://github.com/cowboy8625/rusty-rain.git
-cargo install rusty-rain                            # a CMatrix clone in Rust
-
-sudo apt install exa								# a modern replacement for ls
-# Advice: place in `~/.bashrc`: alias lsc=exa
-
-
-cargo install lsd									# colorfull ls
-cargo install bat									# collor appealing cat
-
-cargo install tokei									# code statistics
-
-
-sudo apt install colortest
-
+sudo snap install helix --classic 			# has `cargo` alternative
+sudo snap install zellij --classic			# has `cargo` alternative
+sudo snap install spt						# has `cargo` alternative (spotify-tui)
 
 sudo snap install discord
 sudo snapp install spotify
 
+sudo snap install docker
+```
 
 
-sudo npm install -g birthday			# birthday tracker
+
+**Updating all `snap` packages**:
+```bash
+sudo snap refresh
+```
+
+
+
+**Listing all `snap` packages**:
+```bash
+snap list
+```
+
+
+
+
+### `cargo` packages installation
+---
+
+
+**Installing `cargo` utility**:
+```bash
+# installing `cargo`
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+source $HOME/.cargo/env						# place it in ~/.bashrc
+```
+or
+```bash
+sudo apt install cargo
+```
+
+
+**`cargo` packages**:
+```bash
+# installing `spt` command
+cargo install spotify-tui					# has `sanp` alternative (spt)
+
+cargo install hurl							# has `snap` alternative
+cargo install rusty-rain
+cargo install lsd
+cargo install exa							# has `apt` alternative
+cargo install bat
+cargo install tokei
+
+# installing `rg` command
+cargo install ripgrep						# has `apt` alternative
+```
+
+
+
+**Listing all `carg` packages**:
+```bash
+cargo install --list
+```
+
+
+
+### `npm` packages installation
+---
+
+
+```bash
+sudo npm install -g birthday
 # option (manual): birthday --help
 # adding new birthday: birthday -n coco gauff -d 13/03/2004
 # displaying the table of birthdays: birthday
-
-
-
-git config --user.name='TrifanBogdan24'
-git config --user.email=''		# my email
 ```
 
 
@@ -189,126 +237,40 @@ the modifications are made in a configuration file, saved locally, on the disk.
 
 > 💾 In my case, `~/.bashrc`.
 
-In this file, the `PS1` environment variable and some suggestive **aliases** are set.
-
 
 Each time a `bash` terminal is opened, all these instructions are executed,
 and the **aliases** will be accessible in every such terminal session.
 
 
 
-```sh
-$ nano -l ~/.bashrc
+Despise the `~/.bashrc`, I have grouped the code in **multiple** `configuration files`:
+1. [`~/.variables.sh`](.dotfiles/.variables.sh)
+2. [`~/.aliases.sh`](.dotfiles/.aliases.sh)
+3. [`~/.functions.sh`](.dotfiles/.functions.sh)
+
+
+
+In these filee, the `PS1` environment variable and some suggestive **aliases** are set.
+
+
+
+
+```bash
+touch ~/.variables.sh
+touch ~/.aliases.sh
+touch ~/.functions.sh
 ```
 
 
 
-Copy and paste the following code at the end of the configuration file:
-
-
-```sh
-# at the end of `~/.bashrc`:
-
-
-# token for committing to my private repos
-export GITHUB_TOKEN='my token'      # personal, sensitive info
-alias github_token="echo $GITHUB_TOKEN"
-
-
-alias nano='nano --linenumbers --mouse --tabsize=4'
-
-alias chrome='google-chrome &> /dev/null &'
-alias youtube='google-chrome https://www.youtube.com/ &> /dev/null &'       	# opens YouTube in web browser (`google-chrome` can be replaced with `open`)
-alias chatgpt='google-chrome https://chatgpt.com/ &> /dev/null &'				# opens ChatGpt in web browser (`google-chrome` can be replaced with `open`)
-
-alias periodic-table='npx periodic-table-cli'
-alias world-map='telnet mapscii.me'
-alias ls-one-line='ls -1'
-alias ls-recent-files='ls -altrh'
-alias cmd-help='compgen -c | fzf | xargs man'
-alias ascii_colors='colortest-16b'
-alias hacking-terminal='docker run --rm -it bcbcarl/hollywood'       # `CTRL-C` and `exit` to stop
-alias hollywood='docker run --rm -it bcbcarl/hollywood'       # `CTRL-C` and `exit` to stop
-alias sl='sl -e'	# enables `CTRL C` (SIGINT signal)
-
-alias git_cheat_sheet='google-chrome https://ndpsoftware.com/git-cheatsheet.html#loc=index &> /dev/null &'	# open Git Cheat Sheet in web browser (`google-chrome` can be replaced with `open`)
-
-                                            # escapes anotether alias
-alias git_reset_last_commit="git reset --hard \$(git log | grep 'commit' awk 'NR==1 {print $2}')"
-
-alias git_delete_last_commit="git reset --soft HEAD~1 && git push -f origin"
-
-git_rename_last_commit() {
-	nr_args=$#
-
-	if [[ $# -ne 1 ]] ; then
-		echo "ERR: expects a single argument, the updated message for last commit"
-		# `return` instead of `exit` to avoid exiting the shell session when sourced in a script or terminal
-		return 1
-	fi
-
-	msg=$1
-	git commit --ammend -m $msg
-	git push -f origin
-}
-
-
-
-
-# opens IDEs in current directory
-alias vscode='code .'
-alias open-rustrover='rustrover . &> /dev/null &'
-alias open-intellij='intellij-idea-ultimate . &> /dev/null &'
-alias open-clion='clion . &> /dev/null &'
-
-alias lsc=exa			# colored ls cmd
-alias ip='ip -c'		# colored ip cmd
-
-
-
-
-find_replace_in_file() {
-	nr_args=$#
-	
-	if [[ $nr_args -ne 3 ]] ; then
-		echo "ERR: Invalid number of arguments"
-		echo "Expect the OLDTEXT, the NEWTEXT and the path to the file"
-		return 1
-	fi
-
-	old=$1
-	new=$2
-	file=$3
-	sed -i 's/$old/$new/g' $file
-}
-
-
-
-
-find_replace_text_to_stdout() {
-    nr_args=$#
-
-    if [[ $nr_args -lt 2 || $nr_args -gt 3 ]] ; then
-        echo "ERR: Invalid number of arguments"
-        echo "Expect the OLDTEXT, the NEWTEXT, and optionally the path to the file"
-        return 1
-    fi
-
-    old=$1
-    new=$2
-
-    if [[ $nr_args -eq 3 ]] ; then
-        file=$3
-        sed "s/$old/$new/g" "$file"
-    else
-        # works withe pipes, example: `cat in.txt | sed old new`
-        sed "s/$old/$new/g"
-    fi
-}
-
+```bash
+$ nano -l functions.sh
+```
+```bash
+# ~/.functions.sh
 
 # colored manual page
-man() {
+function man() {
     LESS_TERMCAP_mb=$'\e[1;34m'   \
     LESS_TERMCAP_md=$'\e[1;32m'   \
     LESS_TERMCAP_so=$'\e[1;33m'   \
@@ -380,17 +342,184 @@ function parse_git_dirty {
 
 
 
+function git_rename_last_commit() {
+	nr_args=$#
+
+	if [[ $# -ne 1 ]] ; then
+		echo "ERR: expects a single argument, the updated message for last commit"
+		# `return` instead of `exit` to avoid exiting the shell session when sourced in a script or terminal
+		return 1
+	fi
+
+	msg=$1
+	git commit --ammend -m $msg
+	git push -f origin
+}
+
+
+
+function find_replace_in_file() {
+	nr_args=$#
+	
+	if [[ $nr_args -ne 3 ]] ; then
+		echo "ERR: Invalid number of arguments"
+		echo "Expect the OLDTEXT, the NEWTEXT and the path to the file"
+		return 1
+	fi
+
+	old=$1
+	new=$2
+	file=$3
+	sed -i 's/$old/$new/g' $file
+}
+
+
+
+
+function find_replace_text_to_stdout() {
+    nr_args=$#
+
+    if [[ $nr_args -lt 2 || $nr_args -gt 3 ]] ; then
+        echo "ERR: Invalid number of arguments"
+        echo "Expect the OLDTEXT, the NEWTEXT, and optionally the path to the file"
+        return 1
+    fi
+
+    old=$1
+    new=$2
+
+    if [[ $nr_args -eq 3 ]] ; then
+        file=$3
+        sed "s/$old/$new/g" "$file"
+    else
+        # works withe pipes, example: `cat in.txt | sed old new`
+        sed "s/$old/$new/g"
+    fi
+}
+```
+
+
+
+
+```bash
+$ nano -l ~/.variables.sh
+```
+```bash
+# ~/.variables.sh
+
+export GITHUB_TOKEN='my token'      # personal, sensitive info
 
 
 # daca nu iti place cum arata terminalul, comenteaza linia de mai jos
-# PS1='\[\e[1;39m\](\[\e[0;0m\] \[\e[1;34m\]\u\[\e[0;0m\]\[\e[1;39m\]@\[\e[0m\]\[\e[1;34m\]\h\[\e[0m\]\[\e[1;39m\] )\[\e[0m\] \[\e[1;39m\]: [ \[\e[1;96m\]\w\[\e[0m\] \[\e[1;39m\]]\[\e[0m\] \[\e[1;39m\]$\[\e[0m\]\n\[\e[1;96m\]$\[\e[0m\] '
+# export PS1='\[\e[1;39m\](\[\e[0;0m\] \[\e[1;34m\]\u\[\e[0;0m\]\[\e[1;39m\]@\[\e[0m\]\[\e[1;34m\]\h\[\e[0m\]\[\e[1;39m\] )\[\e[0m\] \[\e[1;39m\]: [ \[\e[1;96m\]\w\[\e[0m\] \[\e[1;39m\]]\[\e[0m\] \[\e[1;39m\]$\[\e[0m\]\n\[\e[1;96m\]$\[\e[0m\] '
 
 
 # without GIT REPO
-# PS1='\[\e[1;39m\](\[\e[0;0m\] \[\e[1;34m\]\u\[\e[0;0m\]\[\e[1;39m\]@\[\e[0m\]\[\e[1;34m\]\h\[\e[0m\]\[\e[1;39m\] )\[\e[0m\] \[\e[1;39m\]: [ \[\e[1;96m\]\w\[\e[0m\] \[\e[1;39m\]]\[\e[0m\] \[\e[1;39m\]\[\e[0m\] \[\e[1;39m\]$\[\e[0m\] $(printf "%.0s." {1..10})\[\e[0m\] $(date "+%T") \n\[\e[1;96m\]$\[\e[0m\] '
+# export PS1='\[\e[1;39m\](\[\e[0;0m\] \[\e[1;34m\]\u\[\e[0;0m\]\[\e[1;39m\]@\[\e[0m\]\[\e[1;34m\]\h\[\e[0m\]\[\e[1;39m\] )\[\e[0m\] \[\e[1;39m\]: [ \[\e[1;96m\]\w\[\e[0m\] \[\e[1;39m\]]\[\e[0m\] \[\e[1;39m\]\[\e[0m\] \[\e[1;39m\]$\[\e[0m\] $(printf "%.0s." {1..10})\[\e[0m\] $(date "+%T") \n\[\e[1;96m\]$\[\e[0m\] '
 
 # info about GIT REPO
-PS1='\[\e[1;39m\](\[\e[0;0m\] \[\e[1;34m\]\u\[\e[0;0m\]\[\e[1;39m\]@\[\e[0m\]\[\e[1;34m\]\h\[\e[0m\]\[\e[1;39m\] )\[\e[0m\] \[\e[1;39m\]: [ \[\e[1;96m\]\w\[\e[0m\] \[\e[1;39m\]]\[\e[0m\] \[\e[1;39m\]$(parse_git_branch)\[\e[0m\] \[\e[1;39m\]$\[\e[0m\] $(printf "%.0s." {1..10})\[\e[0m\] $(date "+%T") \n\[\e[1;96m\]$\[\e[0m\] '
+export PS1='\[\e[1;39m\](\[\e[0;0m\] \[\e[1;34m\]\u\[\e[0;0m\]\[\e[1;39m\]@\[\e[0m\]\[\e[1;34m\]\h\[\e[0m\]\[\e[1;39m\] )\[\e[0m\] \[\e[1;39m\]: [ \[\e[1;96m\]\w\[\e[0m\] \[\e[1;39m\]]\[\e[0m\] \[\e[1;39m\]$(parse_git_branch)\[\e[0m\] \[\e[1;39m\]$\[\e[0m\] $(printf "%.0s." {1..10})\[\e[0m\] $(date "+%T") \n\[\e[1;96m\]$\[\e[0m\] '
+```
+
+
+
+
+
+```bash
+$ nano -l aliases.sh
+```
+```bash
+# ~/.aliases
+
+alias github_token="echo $GITHUB_TOKEN"
+alias nano='nano --linenumbers --mouse --tabsize=4'
+
+alias chrome='google-chrome &> /dev/null &'
+alias youtube='google-chrome https://www.youtube.com/ &> /dev/null &'       	# opens YouTube in web browser (`google-chrome` can be replaced with `open`)
+alias chatgpt='google-chrome https://chatgpt.com/ &> /dev/null &'				# opens ChatGpt in web browser (`google-chrome` can be replaced with `open`)
+
+alias periodic-table='npx periodic-table-cli'
+alias world-map='telnet mapscii.me'
+alias ls-one-line='ls -1'
+alias ls-recent-files='ls -altrh'
+alias cmd-help='compgen -c | fzf | xargs man'
+alias ascii_colors='colortest-16b'
+alias hacking-terminal='docker run --rm -it bcbcarl/hollywood'       # `CTRL-C` and `exit` to stop
+alias hollywood='docker run --rm -it bcbcarl/hollywood'       # `CTRL-C` and `exit` to stop
+alias sl='sl -e'	# enables `CTRL C` (SIGINT signal)
+
+alias git_cheat_sheet='google-chrome https://ndpsoftware.com/git-cheatsheet.html#loc=index &> /dev/null &'	# open Git Cheat Sheet in web browser (`google-chrome` can be replaced with `open`)
+
+alias git_reset_last_commit="git reset --hard \$(git log | grep 'commit' awk 'NR==1 {print $2}')"
+
+alias git_delete_last_commit="git reset --soft HEAD~1 && git push -f origin"
+
+# opens IDEs in current directory
+alias vscode='code .'
+alias open-rustrover='rustrover . &> /dev/null &'
+alias open-intellij='intellij-idea-ultimate . &> /dev/null &'
+alias open-clion='clion . &> /dev/null &'
+
+alias lsc=exa			# colored ls cmd
+alias ip='ip -c'		# colored ip cmd
+
+
+
+alias fzf_print_file='file=$(fzf) && echo "Absolute path: $(realpath $file)" && cat "$file"'
+
+
+alias fzf_cmd_helper='cmd=$(compgen -c | fzf) && man $cmd 2> /dev/null || $cmd --help 2> /dev/null || type $cmd 2> /dev/null || echo "unkwon $cmd"'
+
+
+alias fzf_history='cmd=$(history | sort -r | fzf | awk '\''{$1=""; print substr($0,2)}'\'') && echo "$cmd" && eval "$cmd"'
+
+
+# List of favourite `oh-my-posh` themes
+# Make sure to install them, before making aliases
+fav_posh_themes=(
+    'atomic'                        # one of my favourites
+    'blue-owl'                      # one of my favourites
+    'blueish'                       # one of my favourites
+    'clean-detailed'                # one of my favourites
+    'kali'                          # one of my favourites
+    'powerlevel10k_modern'          # one of my favourites
+    'powerlevel10k_rainbow'         # one of my favourites
+    'quick-term'                    # one of my favourites
+)
+
+
+
+for theme in "${fav_posh_themes[@]}" ; do
+    alias "prompt-theme-$theme"="eval \"\$(oh-my-posh init bash --config ~/.poshthemes/$theme.omp.json)\""
+done
+```
+
+
+
+
+Copy and paste the following code at the end of the configuration file:
+
+```bash
+nano ~/.bashrc
+```
+```bash
+# at the end of `~/.bashrc`:
+
+
+
+
+
+
+# the order matters
+source ~/.functions.sh
+source ~/.variables.sh
+source ~/.aliases.sh
+
+
+
+# my favourite `oh-my-posh` theme
+eval "$(oh-my-posh init bash --config ~/.poshthemes/blue-owl.omp.json)"
+
 
 
 
@@ -404,6 +533,7 @@ PS1='\[\e[1;39m\](\[\e[0;0m\] \[\e[1;34m\]\u\[\e[0;0m\]\[\e[1;39m\]@\[\e[0m\]\[\
 
 # Kali Linux
 # neofetch --ascii_distro kali --colors 6 7 7 6 7
+
 
 
 neofetch --ascii_distro ubuntu --ascii_colors 4 7 --colors 6 7 7 6 7 7
@@ -533,7 +663,7 @@ $ ./nerd_font_downloader.sh https://github.com/ryanoasis/nerd-fonts/releases/dow
 ```bash
 $ curl -s https://ohmyposh.dev/install.sh | sudo bash -s
 
-$  mkdir -p ~/.poshthemes
+$ mkdir -p ~/.poshthemes
 ```
 
 
