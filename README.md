@@ -26,6 +26,7 @@ Here is my configuration for the `Linux UBUNTU` terminal.
 		- [📥 Instalilling a `Terminal Emulator` (`Xfce`)](#-instalilling-a-terminal-emulator-xfce)
 		- [⚙️ Basic setup for `Xfce Terminal`](#️-basic-setup-for-xfce-terminal)
 		- [🖼️ Setting the background image in `Xfce Terminal`](#️-setting-the-background-image-in-xfce-terminal)
+	- [`helix`](#helix)
 	- [🗄️ `DNS` (Domain Name Server)](#️-dns-domain-name-server)
 		- [🌐 What is `DNS`](#-what-is-dns)
 		- [⚙️ Setting `DNS`](#️-setting-dns)
@@ -146,7 +147,7 @@ sudo snap install clion --classic                   # IDE for C/C++
 sudo snap install onefetch					# has `apt` alternative
 sudo snap install bottom
 
-sudo snap install helix --classic 			# has `cargo` alternative
+sudo snap install helix --classic
 sudo snap install zellij --classic			# has `cargo` alternative
 sudo snap install spt						# has `cargo` alternative (spotify-tui)
 
@@ -200,6 +201,7 @@ cargo install lsd
 cargo install exa							# has `apt` alternative
 cargo install bat
 cargo install tokei
+
 
 # installing `rg` command
 cargo install ripgrep						# has `apt` alternative
@@ -453,6 +455,8 @@ alias git_cheat_sheet='google-chrome https://ndpsoftware.com/git-cheatsheet.html
 alias git_reset_last_commit="git reset --hard \$(git log | grep 'commit' awk 'NR==1 {print $2}')"
 
 alias git_delete_last_commit="git reset --soft HEAD~1 && git push -f origin"
+
+alias open_git_url="open \$(git config --list | grep 'http' | sed 's/remote.origin.url=//g') &> /dev/null &"
 
 # opens IDEs in current directory
 alias vscode='code .'
@@ -882,6 +886,49 @@ Open `Xfce Terminal` -> Bar -> `Edit` -> `Preferences...` -> Appearance -> Backg
 
 > Also, in order for the prompt to work, set a `Nerd Font`
 
+
+
+
+## `helix`
+
+
+**Installation**:
+```bash
+sudo apt update
+sudo apt install snapd
+sudo snap refresh
+sudo snap install helix --classic
+```
+
+
+
+**My favourite `dark` color themes**:
+- [adwaita-dark](images/themes/helix/adwaita-dark.png)
+- [amberwood](images/themes/helix/amberwood.png)
+- [autumn_night](images/themes/helix/[autumn_night.png)
+- [ayu_dark](images/themes/helix/ayu_dark.png)
+- [ayu_evolve](images/themes/helix/ayu_evolve.png)
+- [ayu_mirage](images/themes/helix/ayu_mirage.png)
+- [catppuccin_mocha](images/themes/helix/catppuccin_mocha.png)
+- [curzon](images/themes/helix/curzon.png)
+- [github_dark_colorblind](images/themes/helix/github_dark_colorblind.png)
+- [github_dark_high_contrast](images/themes/helix/github_dark_high_contrast.png)
+- [github_dark_tritanopia](github_dark_tritanopia)
+- [github_dark](images/themes/helix/github_dark.png)
+- [jetbrains_dark](images/themes/helix/jetbrains_dark.png)
+- [material_deep_ocean](images/themes/helix/material_deep_ocean.png)
+- [papercolor-dark](images/themes/helix/)
+- [penumbra+](images/themes/helix/penumbra+.png)
+- [poimandres](images/themes/helix/poimandres.png)
+- [serika-dark](images/themes/helix/serika-dark.png)
+- [tokyonight_moon](images/themes/helix/tokyonight_moon.png)
+- [yellowed](images/themes/helix/)
+
+**My favourite `light` color themes**:
+- [rose_pine_dawn](images/themes/helix/rose_pine_dawn.png)
+- [serika-light](images/themes/helix/serika-light.png)
+- [tokyonight_day](images/themes/helix/tokyonight_day.png)
+- [zed_onelight](images/themes/helix/zed_onelight.png)
 
 
 

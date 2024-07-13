@@ -23,6 +23,8 @@ alias git_reset_last_commit="git reset --hard \$(git log | grep 'commit' awk 'NR
 
 alias git_delete_last_commit="git reset --soft HEAD~1 && git push -f origin"
 
+alias open_git_url="open \$(git config --list | grep 'http' | sed 's/remote.origin.url=//g') &> /dev/null &"
+
 # opens IDEs in current directory
 alias vscode='code .'
 alias open-rustrover='rustrover . &> /dev/null &'
