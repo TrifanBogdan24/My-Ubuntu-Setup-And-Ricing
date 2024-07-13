@@ -905,29 +905,18 @@ sudo snap install helix --classic
 
 
 **My favourite `dark` color themes**:
-- [adwaita-dark](images/themes/helix/adwaita-dark.png)
 - [amberwood](images/themes/helix/amberwood.png)
-- [autumn_night](images/themes/helix/[autumn_night.png)
 - [ayu_dark](images/themes/helix/ayu_dark.png)
 - [ayu_evolve](images/themes/helix/ayu_evolve.png)
-- [ayu_mirage](images/themes/helix/ayu_mirage.png)
-- [catppuccin_mocha](images/themes/helix/catppuccin_mocha.png)
 - [curzon](images/themes/helix/curzon.png)
 - [github_dark_colorblind](images/themes/helix/github_dark_colorblind.png)
 - [github_dark_high_contrast](images/themes/helix/github_dark_high_contrast.png)
-- [github_dark_tritanopia](github_dark_tritanopia)
 - [github_dark](images/themes/helix/github_dark.png)
 - [jetbrains_dark](images/themes/helix/jetbrains_dark.png)
 - [material_deep_ocean](images/themes/helix/material_deep_ocean.png)
-- [papercolor-dark](images/themes/helix/)
-- [penumbra+](images/themes/helix/penumbra+.png)
-- [poimandres](images/themes/helix/poimandres.png)
-- [serika-dark](images/themes/helix/serika-dark.png)
-- [tokyonight_moon](images/themes/helix/tokyonight_moon.png)
-- [yellowed](images/themes/helix/)
+
 
 **My favourite `light` color themes**:
-- [rose_pine_dawn](images/themes/helix/rose_pine_dawn.png)
 - [serika-light](images/themes/helix/serika-light.png)
 - [tokyonight_day](images/themes/helix/tokyonight_day.png)
 - [zed_onelight](images/themes/helix/zed_onelight.png)
