@@ -702,7 +702,7 @@ $ mkdir -p ~/.poshthemes
 
 - [atomic](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/atomic.omp.json)
 
-![atomic](https://ohmyposh.dev/assets/images/atomic-4a8859edab28466efd26209d93d3dcc9.png)
+![atomic](images/themes/oh_my_posh/atomic.png)
 
 ```bash
 # Installing the theme
@@ -714,7 +714,7 @@ eval "$(oh-my-posh init bash --config ~/.poshthemes/atomic.omp.json)"
 
 - [blue-owl](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/blue-owl.omp.json)
 
-![blue-owl](https://ohmyposh.dev/assets/images/blue-owl-c1301b52c4ef00caee7fb59cc8e3e66e.png)
+![blue-owl](images/themes/oh_my_posh/blue-owl.png)
 
 ```bash
 # Installing the theme
@@ -727,7 +727,7 @@ eval "$(oh-my-posh init bash --config ~/.poshthemes/blue-owl.omp.json)"
 
 - [blueish](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/blueish.omp.json)
 
-![blueish](https://ohmyposh.dev/assets/images/blueish-411e99ae6fe1ad3a08d8e829fe57f5ec.png)
+![blueish](images/themes/oh_my_posh/blueish.png)
 
 
 ```bash
@@ -742,7 +742,7 @@ eval "$(oh-my-posh init bash --config ~/.poshthemes/blueish.omp.json)"
 - [clean-detailed](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/clean-detailed.omp.json)
 
 
-![clean-detailed](https://ohmyposh.dev/assets/images/clean-detailed-b39a14070814882ee786b9d015632e83.png)
+![clean-detailed](images/themes/oh_my_posh/clean-detailed.png)
 
 
 ```bash
@@ -757,7 +757,7 @@ eval "$(oh-my-posh init bash --config ~/.poshthemes/clean-detailed.omp.json)"
 
 - [kali](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/kali.omp.json)
 
-![kali](https://ohmyposh.dev/assets/images/kali-d44eb156ab7a1ddc7c8574115be6686b.png)
+![kali](images/themes/oh_my_posh/kali.png)
 
 
 ```bash
@@ -771,7 +771,7 @@ eval "$(oh-my-posh init bash --config ~/.poshthemes/kali.omp.json)"
 
 - [powerlevel10k_modern](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/powerlevel10k_modern.omp.json)
 
-![powerlevel10k_modern](https://ohmyposh.dev/assets/images/powerlevel10k_modern-5acbb3cc704b3ba354038fd761624cbb.png)
+![powerlevel10k_modern](images/themes/oh_my_posh/powerlevel10k_modern.png)
 
 
 ```bash
@@ -786,7 +786,7 @@ eval "$(oh-my-posh init bash --config ~/.poshthemes/powerlevel10k_modern.omp.jso
 
 - [powerlevel10k_rainbow](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/powerlevel10k_rainbow.omp.json)
   
-![powerlevel10k_rainbow](https://ohmyposh.dev/assets/images/powerlevel10k_rainbow-d0f7a57430232abfc03075450c8f7306.png)
+![powerlevel10k_rainbow](images/themes/oh_my_posh/powerlevel10k_rainbow.png)
 
 
 ```bash
@@ -799,7 +799,7 @@ eval "$(oh-my-posh init bash --config ~/.poshthemes/powerlevel10k_rainbow.omp.js
 
 - [quick-term](https://ohmyposh.dev/assets/images/quick-term-2727301345826f64b6c74aef0e4e07cc.png)
 
-![quick-term](https://ohmyposh.dev/assets/images/quick-term-2727301345826f64b6c74aef0e4e07cc.png)
+![quick-term](images/themes/oh_my_posh/quick-term.png)
 
 
 
