@@ -901,6 +901,8 @@ sudo snap install helix --classic
 ```
 
 
+> See all `helix themes` [here](images/themes/helix/README-helix-themes.pdf)
+
 
 **My favourite `dark` color themes**:
 - [adwaita-dark](images/themes/helix/adwaita-dark.png)
