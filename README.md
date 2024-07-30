@@ -494,7 +494,7 @@ fav_posh_themes=(
 
 
 for theme in "${fav_posh_themes[@]}" ; do
-    alias "prompt-theme-$theme"="eval \"\$(oh-my-posh init bash --config ~/.poshthemes/$theme.omp.json)\""
+    alias "prompt-theme-$theme"="eval \"\$(oh-my-posh init bash --config ~/.poshcolor-themes/$theme.omp.json)\""
 done
 ```
 
@@ -522,7 +522,7 @@ source ~/.aliases.sh
 
 
 # my favourite `oh-my-posh` theme
-eval "$(oh-my-posh init bash --config ~/.poshthemes/blue-owl.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.poshcolor-themes/blue-owl.omp.json)"
 
 
 
@@ -700,116 +700,116 @@ $ mkdir -p ~/.poshthemes
 
 
 
-- [atomic](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/atomic.omp.json)
+- [atomic](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/color-themes/atomic.omp.json)
 
-![atomic](images/themes/oh_my_posh/atomic.png)
-
-```bash
-# Installing the theme
-wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/atomic.omp.json -O ~/.poshthemes/atomic.omp.json
-
-# Setting the prompt
-eval "$(oh-my-posh init bash --config ~/.poshthemes/atomic.omp.json)"
-```
-
-- [blue-owl](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/blue-owl.omp.json)
-
-![blue-owl](images/themes/oh_my_posh/blue-owl.png)
+![atomic](images/color-themes/oh_my_posh/atomic.png)
 
 ```bash
 # Installing the theme
-wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/blue-owl.omp.json -O ~/.poshthemes/blue-owl.omp.json
+wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/color-themes/atomic.omp.json -O ~/.poshcolor-themes/atomic.omp.json
 
 # Setting the prompt
-eval "$(oh-my-posh init bash --config ~/.poshthemes/blue-owl.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.poshcolor-themes/atomic.omp.json)"
 ```
 
+- [blue-owl](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/color-themes/blue-owl.omp.json)
 
-- [blueish](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/blueish.omp.json)
-
-![blueish](images/themes/oh_my_posh/blueish.png)
-
+![blue-owl](images/color-themes/oh_my_posh/blue-owl.png)
 
 ```bash
 # Installing the theme
-wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/blueish.omp.json -O ~/.poshthemes/blueish.omp.json
+wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/color-themes/blue-owl.omp.json -O ~/.poshcolor-themes/blue-owl.omp.json
 
 # Setting the prompt
-eval "$(oh-my-posh init bash --config ~/.poshthemes/blueish.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.poshcolor-themes/blue-owl.omp.json)"
 ```
 
 
-- [clean-detailed](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/clean-detailed.omp.json)
+- [blueish](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/color-themes/blueish.omp.json)
 
-
-![clean-detailed](images/themes/oh_my_posh/clean-detailed.png)
+![blueish](images/color-themes/oh_my_posh/blueish.png)
 
 
 ```bash
 # Installing the theme
-wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/clean-detailed.omp.json -O ~/.poshthemes/clean-detailed.omp.json
+wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/color-themes/blueish.omp.json -O ~/.poshcolor-themes/blueish.omp.json
 
 # Setting the prompt
-eval "$(oh-my-posh init bash --config ~/.poshthemes/clean-detailed.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.poshcolor-themes/blueish.omp.json)"
 ```
 
 
+- [clean-detailed](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/color-themes/clean-detailed.omp.json)
 
-- [kali](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/kali.omp.json)
 
-![kali](images/themes/oh_my_posh/kali.png)
+![clean-detailed](images/color-themes/oh_my_posh/clean-detailed.png)
 
 
 ```bash
 # Installing the theme
-wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/kali.omp.json -O ~/.poshthemes/kali.omp.json
+wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/color-themes/clean-detailed.omp.json -O ~/.poshcolor-themes/clean-detailed.omp.json
 
 # Setting the prompt
-eval "$(oh-my-posh init bash --config ~/.poshthemes/kali.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.poshcolor-themes/clean-detailed.omp.json)"
 ```
 
 
-- [powerlevel10k_modern](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/powerlevel10k_modern.omp.json)
 
-![powerlevel10k_modern](images/themes/oh_my_posh/powerlevel10k_modern.png)
+- [kali](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/color-themes/kali.omp.json)
+
+![kali](images/color-themes/oh_my_posh/kali.png)
 
 
 ```bash
 # Installing the theme
-wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/powerlevel10k_modern.omp.json -O ~/.poshthemes/powerlevel10k_modern.omp.json
+wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/color-themes/kali.omp.json -O ~/.poshcolor-themes/kali.omp.json
 
 # Setting the prompt
-eval "$(oh-my-posh init bash --config ~/.poshthemes/powerlevel10k_modern.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.poshcolor-themes/kali.omp.json)"
+```
+
+
+- [powerlevel10k_modern](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/color-themes/powerlevel10k_modern.omp.json)
+
+![powerlevel10k_modern](images/color-themes/oh_my_posh/powerlevel10k_modern.png)
+
+
+```bash
+# Installing the theme
+wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/color-themes/powerlevel10k_modern.omp.json -O ~/.poshcolor-themes/powerlevel10k_modern.omp.json
+
+# Setting the prompt
+eval "$(oh-my-posh init bash --config ~/.poshcolor-themes/powerlevel10k_modern.omp.json)"
 ```
 
 
 
-- [powerlevel10k_rainbow](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/themes/powerlevel10k_rainbow.omp.json)
+- [powerlevel10k_rainbow](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/color-themes/powerlevel10k_rainbow.omp.json)
   
-![powerlevel10k_rainbow](images/themes/oh_my_posh/powerlevel10k_rainbow.png)
+![powerlevel10k_rainbow](images/color-themes/oh_my_posh/powerlevel10k_rainbow.png)
 
 
 ```bash
 # Installing the theme
-wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/powerlevel10k_rainbow.omp.json -O ~/.poshthemes/powerlevel10k_rainbow.omp.json
+wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/color-themes/powerlevel10k_rainbow.omp.json -O ~/.poshcolor-themes/powerlevel10k_rainbow.omp.json
 
-eval "$(oh-my-posh init bash --config ~/.poshthemes/powerlevel10k_rainbow.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.poshcolor-themes/powerlevel10k_rainbow.omp.json)"
 ```
 
 
 - [quick-term](https://ohmyposh.dev/assets/images/quick-term-2727301345826f64b6c74aef0e4e07cc.png)
 
-![quick-term](images/themes/oh_my_posh/quick-term.png)
+![quick-term](images/color-themes/oh_my_posh/quick-term.png)
 
 
 
 ```bash
 # Installing the theme
-wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/quick-term.omp.json -O ~/.poshthemes/quick-term.omp.json
+wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/color-themes/quick-term.omp.json -O ~/.poshcolor-themes/quick-term.omp.json
 
 
 # Setting the prompt
-eval "$(oh-my-posh init bash --config ~/.poshthemes/quick-term.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.poshcolor-themes/quick-term.omp.json)"
 ```
 
 
@@ -818,7 +818,7 @@ eval "$(oh-my-posh init bash --config ~/.poshthemes/quick-term.omp.json)"
 
 > I find `quick-term` to be the most suitable for me.
 >
-> So, the line `eval "$(oh-my-posh init bash --config ~/.poshthemes/quick-term.omp.json)"`
+> So, the line `eval "$(oh-my-posh init bash --config ~/.poshcolor-themes/quick-term.omp.json)"`
 > will be inlcuded at the end of the configuration file `~/.bashrc`
 
 
@@ -901,25 +901,25 @@ sudo snap install helix --classic
 ```
 
 
-> See all `helix themes` in [this PDF](images/themes/helix/README-helix-themes.pdf)
+> See all `helix themes` in [this PDF](images/color-themes/helix/README-helix-themes.pdf).
 
 
 **My favourite `dark` color themes**:
-- [amberwood](images/themes/helix/amberwood.png)
-- [ayu_dark](images/themes/helix/ayu_dark.png)
-- [ayu_evolve](images/themes/helix/ayu_evolve.png)
-- [curzon](images/themes/helix/curzon.png)
-- [github_dark_colorblind](images/themes/helix/github_dark_colorblind.png)
-- [github_dark_high_contrast](images/themes/helix/github_dark_high_contrast.png)
-- [github_dark](images/themes/helix/github_dark.png)
-- [jetbrains_dark](images/themes/helix/jetbrains_dark.png)
-- [material_deep_ocean](images/themes/helix/material_deep_ocean.png)
+- [amberwood](images/color-themes/helix/amberwood.png)
+- [ayu_dark](images/color-themes/helix/ayu_dark.png)
+- [ayu_evolve](images/color-themes/helix/ayu_evolve.png)
+- [curzon](images/color-themes/helix/curzon.png)
+- [github_dark_colorblind](images/color-themes/helix/github_dark_colorblind.png)
+- [github_dark_high_contrast](images/color-themes/helix/github_dark_high_contrast.png)
+- [github_dark](images/color-themes/helix/github_dark.png)
+- [jetbrains_dark](images/color-themes/helix/jetbrains_dark.png)
+- [material_deep_ocean](images/color-themes/helix/material_deep_ocean.png)
 
 
 **My favourite `light` color themes**:
-- [serika-light](images/themes/helix/serika-light.png)
-- [tokyonight_day](images/themes/helix/tokyonight_day.png)
-- [zed_onelight](images/themes/helix/zed_onelight.png)
+- [serika-light](images/color-themes/helix/serika-light.png)
+- [tokyonight_day](images/color-themes/helix/tokyonight_day.png)
+- [zed_onelight](images/color-themes/helix/zed_onelight.png)
 
 
 
