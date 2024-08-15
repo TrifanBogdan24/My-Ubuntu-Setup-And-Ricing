@@ -10,6 +10,7 @@ Here is my configuration for the `Linux UBUNTU` terminal.
 `Table of contents`
 
 - [My `Ubuntu` `bash` Setup and Ricing](#my-ubuntu-bash-setup-and-ricing)
+	- [Preview](#preview)
 	- [What does `ricing` mean?](#what-does-ricing-mean)
 	- [Installing utilities](#installing-utilities)
 		- [`apt` packages installation](#apt-packages-installation)
@@ -19,7 +20,7 @@ Here is my configuration for the `Linux UBUNTU` terminal.
 	- [💾 Configuration File (`~/.bashrc`)](#-configuration-file-bashrc)
 	- [⚙️ Basic Terminal Customizations](#️-basic-terminal-customizations)
 		- [Nerd Fonts](#nerd-fonts)
-		- [My favourite Nerd Fonts:](#my-favourite-nerd-fonts)
+		- [My favourite Nerd Fonts](#my-favourite-nerd-fonts)
 		- [Setting Nerd Fonts](#setting-nerd-fonts)
 		- [Configurable Terminal Prompt (`oh my posh`)](#configurable-terminal-prompt-oh-my-posh)
 	- [👨🏻‍💻 `Xfce` `Terminal Emulator`](#-xfce-terminal-emulator)
@@ -32,6 +33,36 @@ Here is my configuration for the `Linux UBUNTU` terminal.
 		- [⚙️ Setting `DNS`](#️-setting-dns)
 		- [❗⚠️ Troubleshooting `DNS` configuration](#️-troubleshooting-dns-configuration)
 	- [🗑️ Uninstalling Utilities](#️-uninstalling-utilities)
+
+
+
+## Preview
+---
+
+![img](images/cmds/neofetch_distros.png)
+
+![img](images/cmds/colored_man_page.png)
+
+![img](images/cmds/colored_ls.png)
+
+![img](images/cmds/colored_ip.png)
+
+![img](images/cmds/bat)
+
+![img](images/cmds/birthday-1.png)
+![img](images/cmds/birthday-2.png)
+
+![img](images/cmds/npx%20periodic-table-cli.png)
+
+![img](images/cmds/spt-welcome-msg.png)
+![img](images/cmds/spt-song.png)
+![img](images/cmds/spt-album.png)
+![img](images/cmds/spt-analysis.png)
+
+![img](images/cmds/telnet%20mapscii.me.png)
+![img](images/cmds/tokei-code-statistics.png)
+
+
 
 
 ## What does `ricing` mean?
@@ -625,7 +656,8 @@ $ ./nerd_font_downloader.sh https://github.com/ryanoasis/nerd-fonts/releases/dow
 
 
 
-### My favourite Nerd Fonts:
+### My favourite Nerd Fonts
+---
 - `0xProto Nerd Font`
 - `3270 Nerd Font`
 - `CommitMono Nerd Font`
@@ -861,6 +893,10 @@ xfce4-terminal --tab &	# new tab inside of window
 
 
 
+**Result**:
+![img](images/cmds/xfce4-terminal-with-background-image.png)
+
+
 ### ⚙️ Basic setup for `Xfce Terminal`
 ---
 
@@ -940,9 +976,9 @@ sudo snap install helix --classic
 
 
 Useful links:
-- Known `DNS` providers: https://adguard-dns.io/kb/general/dns-providers/
+- Known `DNS` providers: <https://adguard-dns.io/kb/general/dns-providers/>
 
-- `DNS` filtering: https://adguard-dns.io/kb/general/dns-filtering/
+- `DNS` filtering: <https://adguard-dns.io/kb/general/dns-filtering/>
 
 
 
