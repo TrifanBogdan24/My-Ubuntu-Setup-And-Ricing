@@ -429,6 +429,41 @@ function find_replace_text_to_stdout() {
         sed "s/$old/$new/g"
     fi
 }
+
+
+
+function diacritics_replaced_with_ENG_letters() {
+	nr_args=$#
+	func_name=${FUNCNAME[0]}
+
+	if [[ $nr_args != 1 ]] ; then
+		echo "ERR: The script expects a file as argument." >&2
+		echo "Example: $ $func_name file" >&2
+		return 1   # DON'T use 'exit'
+	fi
+
+
+	file=$1
+
+	if [[ ! -f $file ]] ; then
+		echo "ERR: The argument <$file> is not a file." >&2
+		return 1   # DON'T use 'exit'
+	fi
+
+
+	sed -i -E 's/[ĂÂ]/A/g' $file   # ['Ă', 'Â'] -> 'A'
+	sed -i -E 's/[ăâ]/a/g' $file   # ['ă', 'â'] -> 'a'
+
+	sed -i 's/Î/I/g' $file	 # 'Î' -> I
+	sed -i 's/î/i/g' $file   # 'î' -> i
+
+	sed -i 's/Ș/S/g' $file   # 'Ș' -> S
+	sed -i 's/ș/s/g' $file   # 'ș' -> 's'
+
+	sed -i 's/Ț/T/g' $file   # 'Ț' -> 'T'
+	sed -i 's/ț/t/g' $file   # 'ț' -> 't'
+}
+
 ```
 
 
