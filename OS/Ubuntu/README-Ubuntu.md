@@ -27,6 +27,7 @@ Here is my configuration for the `Linux UBUNTU` terminal.
 		- [📥 Instalilling a `Terminal Emulator` (`Xfce`)](#-instalilling-a-terminal-emulator-xfce)
 		- [⚙️ Basic setup for `Xfce Terminal`](#️-basic-setup-for-xfce-terminal)
 		- [🖼️ Setting the background image in `Xfce Terminal`](#️-setting-the-background-image-in-xfce-terminal)
+	- [🖼️ Ubuntu Desktop `Tela Icon Theme`](#️-ubuntu-desktop-tela-icon-theme)
 	- [`helix`](#helix)
 	- [🗄️ `DNS` (Domain Name Server)](#️-dns-domain-name-server)
 		- [🌐 What is `DNS`](#-what-is-dns)
@@ -64,7 +65,12 @@ Here is my configuration for the `Linux UBUNTU` terminal.
 
 
 
-**IDEs and Text Editors**:
+**Icons**
+![img](Images/Icons/tela-blue-01.png)
+![img](Images/Icons/tela-blue-02.png)
+
+
+**IDEs and Text Editors Color Themes**:
 ![img](Images/Color-Themes/VS-Code/Blue_Black_(Blackest_With_Blue).png)
 ![img](Images/Color-Themes/VS-Code/Iceberg_Theme_by_cocopon.png)
 ![img](Images/Color-Themes/IDEA/Iceberg.png)
@@ -270,7 +276,7 @@ sudo npm install -g birthday
 
 
 ## 💾 Configuration File (`~/.bashrc`)
-
+---
 
 In order for the following changes to be persistent over time (restarting the terminal)
 the modifications are made in a configuration file, saved locally, on the disk.
@@ -626,16 +632,23 @@ $ reset
 
 
 ## ⚙️ Basic Terminal Customizations
+---
 
 ⚙️: Teminal -> Three Horizontal Bars -> Preferences -> Unnamed 
 -> Colors -> Background -> `#0D0324`
 
 
+![img](Images/Settings/terminal_background.png)
+
+
 ⚙️: Terminal -> Three Horizontal Bars -> Preferences -> Unnamed -> Text -> Cursor shape -> `I-Beam`
 
+![img](Images/Settings/terminal_cursor_shape_I_beam.png)
 
-⚙️: Terminal -> Three Horizontal Bars -> Preferences -> Unnamed -> Text -> Cursor blinking -> `Enable`
 
+⚙️: Terminal -> Three Horizontal Bars -> Preferences -> Unnamed -> Text -> Cursor blinking -> `Enabled`
+
+![img](Images/Settings/terminal_cursor_blincking_enabled.png)
 
 
 
@@ -964,6 +977,48 @@ Open `Xfce Terminal` -> Bar -> `Edit` -> `Preferences...` -> Appearance -> Backg
 
 > Also, in order for the prompt to work, set a `Nerd Font`
 
+
+
+
+## 🖼️ Ubuntu Desktop `Tela Icon Theme`
+---
+
+
+Please see this GitHub repo: <https://github.com/vinceliuice/Tela-icon-theme.git>
+
+
+Installing using the command line:
+
+```bash
+$ sudo snap install tela-icons
+```
+
+Installing using the Ubuntu GUI:
+⚙️ Ubuntu Software -> search for and install `Tela Icon Theme`.
+
+
+
+Using `Tela Icon Theme` requires having `GNOME Tweaks`:
+```bash
+$ sudo apt install gnome-tweaks
+```
+
+
+Setting up the `Tela Icon Theme` (using Ubuntu GUI):
+⚙️ Show Applications -> Tweaks -> Appearance -> Icons -> Select an Icon Theme.
+
+
+![img](Images/Settings/tela_icons.png)
+
+
+My favourite `Tela Icon Themes` are:
+- `Tela-blue`/`Tela-blue-dark`
+- `Tela-nord`/`Tela-nord-dark`
+
+
+Results:
+![img](Images/Icons/tela-blue-01.png)
+![img](Images/Icons/tela-nord-02.png)
 
 
 
