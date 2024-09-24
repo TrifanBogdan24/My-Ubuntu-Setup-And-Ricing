@@ -33,6 +33,11 @@ Here is my configuration for the `Linux UBUNTU` terminal.
 		- [🌐 What is `DNS`](#-what-is-dns)
 		- [⚙️ Setting `DNS`](#️-setting-dns)
 		- [❗⚠️ Troubleshooting `DNS` configuration](#️-troubleshooting-dns-configuration)
+	- [✍️  Signing `Git` commits and tags with `GPG`](#️--signing-git-commits-and-tags-with-gpg)
+		- [Generating a new `GPG` key](#generating-a-new-gpg-key)
+		- [Enabling Signing `Git` Commits in `VS Code`](#enabling-signing-git-commits-in-vs-code)
+		- [Adding a `GPG` key to `GitHub` account](#adding-a-gpg-key-to-github-account)
+		- [✍️ Automatically signing all `git` commits and tags](#️-automatically-signing-all-git-commits-and-tags)
 	- [🗑️ Uninstalling Utilities](#️-uninstalling-utilities)
 
 
@@ -1237,10 +1242,132 @@ sudo ln -sf /run/systemd/resolve/stub-resolv.conf /etc/resolv.conf
 
 
 
+
+
 5. Step 5: Recheck the Status
 ```bash
 $ resolvectl status
 ```
+
+
+
+## ✍️  Signing `Git` commits and tags with `GPG`
+---
+
+
+
+<!-- "Git" verified -->
+<div style="border: 1px solid #ddd; padding: 10px; max-width: 300px; position: relative; display: inline-block;">
+  <a href="https://www.youtube.com/shorts/oIGzfvBb6Hk?feature=share" target="_blank" style="display: block; position: relative;">
+    <img src="https://img.youtube.com/vi/oIGzfvBb6Hk/hqdefault.jpg" alt="YouTube Shorts Thumbnail" style="width: 100%; display: block;">
+    <div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; background: rgba(255, 0, 0, 0.8); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+      <svg viewBox="0 0 24 24" fill="white" style="width: 24px; height: 24px;"><path d="M8 5v14l11-7L8 5z"/></svg>
+    </div>
+  </a>
+  <p><a href="https://www.youtube.com/shorts/oIGzfvBb6Hk?feature=share" target="_blank">"Git" verified https://www.youtube.com/shorts/oIGzfvBb6Hk?feature=share</a></p>
+</div>
+
+
+
+
+> Useful links:
+> - [GitHub Docs Generating a new GPG key](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key)
+> - [GitHub Docs Adding a GPG key to your GitHub account](https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account)
+> - [GitHub Docs Telling Git about your signing key](https://docs.github.com/en/authentication/managing-commit-signature-verification/telling-git-about-your-signing-key)`
+> - [GitHub Docs Associating an email with your GPG key](https://docs.github.com/en/authentication/managing-commit-signature-verification/associating-an-email-with-your-gpg-key)
+> - [GitHub Docs Signing commits](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-commits)
+> - [GitHub Docs Signing tags](https://docs.github.com/en/authentication/managing-commit-signature-verification/signing-tags)
+
+
+
+
+
+Before and After signing `git` commits with `gpg`:
+![img](Images/Settings/verified-git-commit.png)
+
+
+### Generating a new `GPG` key
+---
+
+> Useful link: [GitHub Docs Generating a new GPG key](https://docs.github.com/en/authentication/managing-commit-signature-verification/generating-a-new-gpg-key)
+
+
+
+```bash
+$ sudo apt install gpg  # for Linux Ubuntu
+$ gpg --version
+$ gpg --full-gen-key    # generating a new GPG key
+
+$ gpg --list-secret-keys --keyid-format=long
+$ gpg --armor --export $MY_GPG_KEY  # Prints the GPG key ID, in ASCII armor format
+```
+
+
+
+### Enabling Signing `Git` Commits in `VS Code`
+---
+
+In `VS Code` -> `Settings` -> Search for `git enable commit signing`
+
+
+![img](Images/Settings/vs-code-git-commit-signing.png)
+
+
+
+### Adding a `GPG` key to `GitHub` account
+---
+
+> Useful link: [GitHub Docs Adding a GPG key to your GitHub account](https://docs.github.com/en/authentication/managing-commit-signature-verification/adding-a-gpg-key-to-your-github-account)
+
+
+On `GitHub`, add your **`gpg` key**:
+- Click on the **upper-right corner** profile picture to open a **right panel**
+- Click on `Settings` from the **right panel**
+- Click on `SSH and GPG keys` from the **left panel**
+- Click on `New GPG key` (a green button)
+
+
+Place the `gpg key`, provided by the following command
+```bash
+$ gpg --armor --export $MY_GPG_KEY 
+```
+
+The generated output should have this format:
+```
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+
+-----END PGP PUBLIC KEY BLOCK-----
+```
+
+
+### ✍️ Automatically signing all `git` commits and tags
+---
+
+
+```bash
+$ gpg --list-secret-keys --keyid-format LONG   # the below line is an example
+/home/username/.gnupg/secring.gpg
+---------------------------------
+sec   4096R/ABCDEF1234567890 2024-08-23 [expires: 2026-08-22]
+
+
+
+$ git config --global user.signingkey $YOUR_GPG_KEY_ID
+$ git config --global commit.gpgSign true
+$ git config --global tag.gpgSign true
+$ git config --global --list
+```
+
+
+> Now, **every time you `commit`**, it will be `signed` automatically,
+> without needing the `-S` flag.
+
+```bash
+$ git commit --no-gpg-sign -m "your commit message"  # makes an unsigned commit
+```
+
+
+
 
 
 ## 🗑️ Uninstalling Utilities
