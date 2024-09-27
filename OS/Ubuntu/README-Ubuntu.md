@@ -28,7 +28,8 @@ Here is my configuration for the `Linux UBUNTU` terminal.
 		- [⚙️ Basic setup for `Xfce Terminal`](#️-basic-setup-for-xfce-terminal)
 		- [🖼️ Setting the background image in `Xfce Terminal`](#️-setting-the-background-image-in-xfce-terminal)
 	- [🖼️ Ubuntu Desktop `Tela Icon Theme`](#️-ubuntu-desktop-tela-icon-theme)
-	- [`helix`](#helix)
+	- [🔁🖼️ Dynamic Background Images (from `GitHub` repos)](#️-dynamic-background-images-from-github-repos)
+	- [`helix` (Modal Text Editor)](#helix-modal-text-editor)
 	- [🗄️ `DNS` (Domain Name Server)](#️-dns-domain-name-server)
 		- [🌐 What is `DNS`](#-what-is-dns)
 		- [⚙️ Setting `DNS`](#️-setting-dns)
@@ -1027,7 +1028,58 @@ Results:
 
 
 
-## `helix`
+## 🔁🖼️ Dynamic Background Images (from `GitHub` repos)
+---
+
+See these `GitHub` repositories:
+- <https://github.com/manishprivet/dynamic-gnome-wallpapers>
+- <https://github.com/saint-13/Linux_Dynamic_Wallpapers>
+
+
+
+**For <https://github.com/manishprivet/dynamic-gnome-wallpapers>**:
+
+
+Wallpaper Gallery (a handful of themes):
+- Lakeside
+- A Certain Magical Index
+- Exodus
+- Minimal-Mojave
+- Mojave
+- Mojave V2
+- Big_Sur_Beach
+- Firewatch
+- Lakeside-2
+- Big_Sur
+- Fuji
+- Catalina
+
+Installation:
+```bash
+$ curl -s https://wallpapers.manishk.dev/install.sh | bash -s $THEME_CODE
+```
+
+
+Global Installation (for all users on the system):
+```bash
+curl -s https://wallpapers.manishk.dev/install.sh | sudo bash -s $THEME_CODE --global
+```
+
+
+**For  <https://github.com/saint-13/Linux_Dynamic_Wallpapers>**:
+```bash
+$ cd ~
+$ git clone https://github.com/saint-13/Linux_Dynamic_Wallpapers.git
+$ cd Linux_Dynamic_Wallpapers
+$ sudo bash ./install.sh
+```
+
+Is rich in themes.
+
+
+
+
+## `helix` (Modal Text Editor)
 
 
 **Installation**:
