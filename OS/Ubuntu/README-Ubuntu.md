@@ -580,7 +580,7 @@ fav_posh_themes=(
 
 
 for theme in "${fav_posh_themes[@]}" ; do
-    alias "prompt-theme-$theme"="eval \"\$(oh-my-posh init bash --config ~/.poshcolor-themes/$theme.omp.json)\""
+    alias "prompt-theme-$theme"="eval \"\$(oh-my-posh init bash --config ~/.posh-themes/$theme.omp.json)\""
 done
 ```
 
@@ -608,7 +608,7 @@ source ~/.aliases.sh
 
 
 # my favourite `oh-my-posh` theme
-eval "$(oh-my-posh init bash --config ~/.poshcolor-themes/blue-owl.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.posh-themes/blue-owl.omp.json)"
 
 
 
@@ -761,7 +761,7 @@ $ ./nerd_font_downloader.sh https://github.com/ryanoasis/nerd-fonts/releases/dow
 ```bash
 $ curl -s https://ohmyposh.dev/install.sh | sudo bash -s
 
-$ mkdir -p ~/.poshthemes
+$ mkdir -p ~/.posh-themes
 ```
 
 
@@ -800,10 +800,10 @@ $ mkdir -p ~/.poshthemes
 
 ```bash
 # Installing the theme
-wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/color-themes/atomic.omp.json -O ~/.poshcolor-themes/atomic.omp.json
+wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/color-themes/atomic.omp.json -O ~/.posh-themes/atomic.omp.json
 
 # Setting the prompt
-eval "$(oh-my-posh init bash --config ~/.poshcolor-themes/atomic.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.posh-themes/atomic.omp.json)"
 ```
 
 - [blue-owl](https://github.com/JanDeDobbeleer/oh-my-posh/blob/main/color-themes/blue-owl.omp.json)
@@ -812,10 +812,10 @@ eval "$(oh-my-posh init bash --config ~/.poshcolor-themes/atomic.omp.json)"
 
 ```bash
 # Installing the theme
-wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/color-themes/blue-owl.omp.json -O ~/.poshcolor-themes/blue-owl.omp.json
+wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/color-themes/blue-owl.omp.json -O ~/.posh-themes/blue-owl.omp.json
 
 # Setting the prompt
-eval "$(oh-my-posh init bash --config ~/.poshcolor-themes/blue-owl.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.posh-themes/blue-owl.omp.json)"
 ```
 
 
@@ -826,10 +826,10 @@ eval "$(oh-my-posh init bash --config ~/.poshcolor-themes/blue-owl.omp.json)"
 
 ```bash
 # Installing the theme
-wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/color-themes/blueish.omp.json -O ~/.poshcolor-themes/blueish.omp.json
+wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/color-themes/blueish.omp.json -O ~/.posh-themes/blueish.omp.json
 
 # Setting the prompt
-eval "$(oh-my-posh init bash --config ~/.poshcolor-themes/blueish.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.posh-themes/blueish.omp.json)"
 ```
 
 
@@ -841,10 +841,10 @@ eval "$(oh-my-posh init bash --config ~/.poshcolor-themes/blueish.omp.json)"
 
 ```bash
 # Installing the theme
-wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/color-themes/clean-detailed.omp.json -O ~/.poshcolor-themes/clean-detailed.omp.json
+wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/color-themes/clean-detailed.omp.json -O ~/.posh-themes/clean-detailed.omp.json
 
 # Setting the prompt
-eval "$(oh-my-posh init bash --config ~/.poshcolor-themes/clean-detailed.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.posh-themes/clean-detailed.omp.json)"
 ```
 
 
@@ -856,10 +856,10 @@ eval "$(oh-my-posh init bash --config ~/.poshcolor-themes/clean-detailed.omp.jso
 
 ```bash
 # Installing the theme
-wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/color-themes/kali.omp.json -O ~/.poshcolor-themes/kali.omp.json
+wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/color-themes/kali.omp.json -O ~/.posh-themes/kali.omp.json
 
 # Setting the prompt
-eval "$(oh-my-posh init bash --config ~/.poshcolor-themes/kali.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.posh-themes/kali.omp.json)"
 ```
 
 
@@ -870,10 +870,10 @@ eval "$(oh-my-posh init bash --config ~/.poshcolor-themes/kali.omp.json)"
 
 ```bash
 # Installing the theme
-wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/color-themes/powerlevel10k_modern.omp.json -O ~/.poshcolor-themes/powerlevel10k_modern.omp.json
+wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/color-themes/powerlevel10k_modern.omp.json -O ~/.posh-themes/powerlevel10k_modern.omp.json
 
 # Setting the prompt
-eval "$(oh-my-posh init bash --config ~/.poshcolor-themes/powerlevel10k_modern.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.posh-themes/powerlevel10k_modern.omp.json)"
 ```
 
 
@@ -885,9 +885,9 @@ eval "$(oh-my-posh init bash --config ~/.poshcolor-themes/powerlevel10k_modern.o
 
 ```bash
 # Installing the theme
-wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/color-themes/powerlevel10k_rainbow.omp.json -O ~/.poshcolor-themes/powerlevel10k_rainbow.omp.json
+wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/color-themes/powerlevel10k_rainbow.omp.json -O ~/.posh-themes/powerlevel10k_rainbow.omp.json
 
-eval "$(oh-my-posh init bash --config ~/.poshcolor-themes/powerlevel10k_rainbow.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.posh-themes/powerlevel10k_rainbow.omp.json)"
 ```
 
 
@@ -899,11 +899,11 @@ eval "$(oh-my-posh init bash --config ~/.poshcolor-themes/powerlevel10k_rainbow.
 
 ```bash
 # Installing the theme
-wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/color-themes/quick-term.omp.json -O ~/.poshcolor-themes/quick-term.omp.json
+wget https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/color-themes/quick-term.omp.json -O ~/.posh-themes/quick-term.omp.json
 
 
 # Setting the prompt
-eval "$(oh-my-posh init bash --config ~/.poshcolor-themes/quick-term.omp.json)"
+eval "$(oh-my-posh init bash --config ~/.posh-themes/quick-term.omp.json)"
 ```
 
 
@@ -912,7 +912,7 @@ eval "$(oh-my-posh init bash --config ~/.poshcolor-themes/quick-term.omp.json)"
 
 > I find `quick-term` to be the most suitable for me.
 >
-> So, the line `eval "$(oh-my-posh init bash --config ~/.poshcolor-themes/quick-term.omp.json)"`
+> So, the line `eval "$(oh-my-posh init bash --config ~/.posh-themes/quick-term.omp.json)"`
 > will be inlcuded at the end of the configuration file `~/.bashrc`
 
 
