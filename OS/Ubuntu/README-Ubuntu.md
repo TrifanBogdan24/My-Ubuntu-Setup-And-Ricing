@@ -41,6 +41,8 @@ Here is my configuration for the `Linux UBUNTU` terminal.
 		- [✍️ Automatically signing all `git` commits and tags](#️-automatically-signing-all-git-commits-and-tags)
 	- [Installing `Go`](#installing-go)
 	- [`Charm CLI` | `Freeze`](#charm-cli--freeze)
+	- [`Charm CLI` | `Glow`](#charm-cli--glow)
+	- [`Charm CLI` | `Pop`](#charm-cli--pop)
 	- [🗑️ Uninstalling Utilities](#️-uninstalling-utilities)
 
 
@@ -1435,6 +1437,20 @@ $ git commit --no-gpg-sign -m "your commit message"  # makes an unsigned commit
 $ sudo snap install --classic go
 $ sudo apt install -y golang
 ```
+Or:
+```bash
+$ sudo apt remove -y golang-go
+$ sudo apt remove -y --autoremove golang-go
+
+$ wget https://go.dev/dl/go1.21.0.linux-amd64.tar.gz
+
+$ sudo rm -rf /usr/local/go
+$ sudo tar -C /usr/local -xzf go1.21.0.linux-amd64.tar.gz
+
+$ export PATH=$PATH:/usr/local/go/bin
+$ echo "export PATH=$PATH:/usr/local/go/bin" > ~/.bashrc
+$ source ~/.bashrc  # or ~/.profile or ~/.zshrc
+```
 
 
 
@@ -1470,7 +1486,7 @@ $ sudo apt install -y golang
 <br>
 
 
-> See this link: <https://github.com/charmbracelet/freeze.git>.
+> Check out this GitHub repo: <https://github.com/charmbracelet/freeze.git>.
 
 
 
@@ -1521,6 +1537,150 @@ Results:
 ![img](Images/cmds/freeze_2.png)
 ![img](Images/cmds/freeze_3.png)
 
+
+
+
+
+## `Charm CLI` | `Glow`
+---
+
+
+> Render markdown on the CLI.
+
+<!-- The best markdown reader for your terminal // Glow #shorts -->
+<div style="border: 1px solid #ddd; padding: 10px; max-width: 300px; position: relative; display: inline-block;">
+	<a href="https://www.youtube.com/shorts/Nl9pcj79byY?feature=share" target="_blank" style="display: block; position: relative;">
+		<!--  Thumbnail -->
+		<img src="https://i.ytimg.com/vi/Nl9pcj79byY/hq720_2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4AbYIgAKAD4oCDAgAEAEYUiBLKGUwDw==&rs=AOn4CLClvVcM6289q8lejauts8PnrtDRBw" alt="YouTube Thumbnail" style="width: 100%; display: block;">
+		<!-- Play button in the center -->
+		<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; background: rgba(255, 0, 0, 0.8); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+			<div style="width: 0; height: 0; border-left: 15px solid white; border-top: 10px solid transparent; border-bottom: 10px solid transparent;"></div>
+		</div>
+		<!-- Black rectangle with duration at bottom-right -->
+		<div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0, 0, 0, 0.8); color: white; padding: 2px 6px; font-size: 12px; border-radius: 3px;">
+			0:48
+		</div>
+	</a>
+	<div style="margin: 0 auto; width: 90%; text-align: left;">
+		<!-- Text of URL -->
+		<p style="margin: 10px 0;"><a href="https://www.youtube.com/shorts/Nl9pcj79byY?feature=share" target="_blank">https://www.youtube.com/shorts/Nl9pcj79byY?feature=share</a></p>
+		<!-- Separation line -->
+		<hr style="border: 0; height: 1px; background: #ddd; margin: 10px 0;">
+		<!-- Text of Title -->
+		<p style="margin: 10px 0;"><a href="https://www.youtube.com/shorts/Nl9pcj79byY?feature=share" target="_blank">The best markdown reader for your terminal // Glow #shorts</a></p>
+	</div>
+</div>
+<br>
+<br>
+
+
+
+<!-- Glow: The Trailer -->
+<div style="border: 1px solid #ddd; padding: 10px; max-width: 300px; position: relative; display: inline-block;">
+	<a href="https://youtu.be/LSdeT5MTMLE" target="_blank" style="display: block; position: relative;">
+		<!--  Thumbnail -->
+		<img src="https://i.ytimg.com/vi/LSdeT5MTMLE/hqdefault.jpg?sqp=-oaymwEXCJADEOABSFryq4qpAwkIARUAAIhCGAE=&rs=AOn4CLCxs2wVVe4nu-D3bGwM-dbZODYPwA" alt="YouTube Thumbnail" style="width: 100%; display: block;">
+		<!-- Play button in the center -->
+		<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; background: rgba(255, 0, 0, 0.8); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+			<div style="width: 0; height: 0; border-left: 15px solid white; border-top: 10px solid transparent; border-bottom: 10px solid transparent;"></div>
+		</div>
+		<!-- Black rectangle with duration at bottom-right -->
+		<div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0, 0, 0, 0.8); color: white; padding: 2px 6px; font-size: 12px; border-radius: 3px;">
+			0:30
+		</div>
+	</a>
+	<div style="margin: 0 auto; width: 90%; text-align: left;">
+		<!-- Text of URL -->
+		<p style="margin: 10px 0;"><a href="https://youtu.be/LSdeT5MTMLE" target="_blank">https://youtu.be/LSdeT5MTMLE</a></p>
+		<!-- Separation line -->
+		<hr style="border: 0; height: 1px; background: #ddd; margin: 10px 0;">
+		<!-- Text of Title -->
+		<p style="margin: 10px 0;"><a href="https://youtu.be/LSdeT5MTMLE" target="_blank">Glow: The Trailer</a></p>
+	</div>
+</div>
+<br>
+<br>
+
+
+
+> Check out this GitHub repo: <https://github.com/charmbracelet/glow.git>
+
+
+```bash
+# Installation
+go install github.com/charmbracelet/glow@latest
+```
+
+
+```bash
+# Checking the installation
+$ which glow
+$ glow --help
+```
+
+
+
+`glow` is an excellent **CLI** tool for viewing and editing
+Markdown files directly in the terminal.
+
+To view a specific Markdown file, simply pass the file path (e.g., `*.md`) to `glow`. 
+
+When used without arguments,
+`glow` will automatically scan the current working directory and its subdirectories 
+for Markdown files, allowing you to select one for viewing.
+
+
+
+
+## `Charm CLI` | `Pop`
+---
+
+
+<!-- Click this if you hate writing emails (=____=) -->
+<div style="border: 1px solid #ddd; padding: 10px; max-width: 300px; position: relative; display: inline-block;">
+	<a href="https://www.youtube.com/shorts/cFCejHDsaQU?feature=share" target="_blank" style="display: block; position: relative;">
+		<!--  Thumbnail -->
+		<img src="https://i.ytimg.com/vi/cFCejHDsaQU/hq720_2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4AbYIgAKAD4oCDAgAEAEYNiAiKH8wDw==&rs=AOn4CLAms4Ytx469syTO1WiQHQ_-YF7qTA" alt="YouTube Thumbnail" style="width: 100%; display: block;">
+		<!-- Play button in the center -->
+		<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; background: rgba(255, 0, 0, 0.8); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+			<div style="width: 0; height: 0; border-left: 15px solid white; border-top: 10px solid transparent; border-bottom: 10px solid transparent;"></div>
+		</div>
+		<!-- Black rectangle with duration at bottom-right -->
+		<div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0, 0, 0, 0.8); color: white; padding: 2px 6px; font-size: 12px; border-radius: 3px;">
+			0:51
+		</div>
+	</a>
+	<div style="margin: 0 auto; width: 90%; text-align: left;">
+		<!-- Text of URL -->
+		<p style="margin: 10px 0;"><a href="https://www.youtube.com/shorts/cFCejHDsaQU?feature=share" target="_blank">https://www.youtube.com/shorts/cFCejHDsaQU?feature=share</a></p>
+		<!-- Separation line -->
+		<hr style="border: 0; height: 1px; background: #ddd; margin: 10px 0;">
+		<!-- Text of Title -->
+		<p style="margin: 10px 0;"><a href="https://www.youtube.com/shorts/cFCejHDsaQU?feature=share" target="_blank">Click this if you hate writing emails (=____=)</a></p>
+	</div>
+</div>
+
+
+
+
+> Checkout this GitHub repo: <https://github.com/charmbracelet/pop.git>
+
+
+Installation
+```bash
+$ go install github.com/charmbracelet/pop@latest
+```
+
+
+
+```bash
+$ which pop
+$ pop --version
+```
+
+
+
+TODO: get configuration
 
 
 
