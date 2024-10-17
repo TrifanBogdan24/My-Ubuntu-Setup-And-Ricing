@@ -58,6 +58,8 @@ Here is my configuration for the `Linux UBUNTU` terminal.
 
 ![img](Images/cmds/bat.png)
 
+![img](Images/cmds/freeze_1.png)
+
 ![img](Images/cmds/birthday-1.png)
 ![img](Images/cmds/birthday-2.png)
 
@@ -70,6 +72,7 @@ Here is my configuration for the `Linux UBUNTU` terminal.
 
 ![img](Images/cmds/telnet%20mapscii.me.png)
 ![img](Images/cmds/tokei-code-statistics.png)
+
 
 
 
@@ -1513,7 +1516,10 @@ $ frreze artichoke.hs -o artichoke.png
 
 
 
-
+Results:
+![img](Images/cmds/freeze_1.png)
+![img](Images/cmds/freeze_2.png)
+![img](Images/cmds/freeze_3.png)
 
 
 
