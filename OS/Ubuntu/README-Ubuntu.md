@@ -39,6 +39,8 @@ Here is my configuration for the `Linux UBUNTU` terminal.
 		- [Enabling Signing `Git` Commits in `VS Code`](#enabling-signing-git-commits-in-vs-code)
 		- [Adding a `GPG` key to `GitHub` account](#adding-a-gpg-key-to-github-account)
 		- [✍️ Automatically signing all `git` commits and tags](#️-automatically-signing-all-git-commits-and-tags)
+	- [Installing `Go`](#installing-go)
+	- [`Charm CLI` | `Freeze`](#charm-cli--freeze)
 	- [🗑️ Uninstalling Utilities](#️-uninstalling-utilities)
 
 
@@ -1422,6 +1424,99 @@ $ git commit --no-gpg-sign -m "your commit message"  # makes an unsigned commit
 
 
 
+## Installing `Go`
+---
+
+
+```bash
+$ sudo snap install --classic go
+$ sudo apt install -y golang
+```
+
+
+
+## `Charm CLI` | `Freeze`
+---
+
+
+
+<!-- Create images of code from your terminal (ft. Freeze) -->
+<div style="border: 1px solid #ddd; padding: 10px; max-width: 300px; position: relative; display: inline-block;">
+	<a href="https://www.youtube.com/shorts/Mt7AakbyhbY?feature=share" target="_blank" style="display: block; position: relative;">
+		<!--  Thumbnail -->
+		<img src="https://i.ytimg.com/vi/Mt7AakbyhbY/hq720_2.jpg?sqp=-oaymwEoCIAKENAF8quKqQMcGADwAQH4AbYIgAKAD4oCDAgAEAEYZSBLKEswDw==&rs=AOn4CLB5seIjROPtHUIBeacTTlJSTEVCxQ" alt="YouTube Thumbnail" style="width: 100%; display: block;">
+		<!-- Play button in the center -->
+		<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; background: rgba(255, 0, 0, 0.8); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+			<div style="width: 0; height: 0; border-left: 15px solid white; border-top: 10px solid transparent; border-bottom: 10px solid transparent;"></div>
+		</div>
+		<!-- Black rectangle with duration at bottom-right -->
+		<div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0, 0, 0, 0.8); color: white; padding: 2px 6px; font-size: 12px; border-radius: 3px;">
+			0:39
+		</div>
+	</a>
+	<div style="margin: 0 auto; width: 90%; text-align: left;">
+		<!-- Text of URL -->
+		<p style="margin: 10px 0;"><a href="https://www.youtube.com/shorts/Mt7AakbyhbY?feature=share" target="_blank">https://www.youtube.com/shorts/Mt7AakbyhbY?feature=share</a></p>
+		<!-- Separation line -->
+		<hr style="border: 0; height: 1px; background: #ddd; margin: 10px 0;">
+		<!-- Text of Title -->
+		<p style="margin: 10px 0;"><a href="https://www.youtube.com/shorts/Mt7AakbyhbY?feature=share" target="_blank">Create images of code from your terminal (ft. Freeze)</a></p>
+	</div>
+</div>
+<br>
+<br>
+
+
+> See this link: <https://github.com/charmbracelet/freeze.git>.
+
+
+
+```bash
+$ git clone https://github.com/charmbracelet/freeze.git
+$ cd freeze
+$ go mod tidy
+$ go build
+$ go install
+
+# Instead of '~/.bashrc', it can be '~/.profile'
+$ echo "export PATH=$PATH:$HOME/go/bin" ~/.bashrc
+$ source ~/.bashrc
+
+$ cd ../
+$ rm -rf freeze
+```
+
+
+> `freeze` takes **screenshots** of code **snippets**.
+> 
+> Don't use it for entire files!
+>
+> Use `freeze` for maximum 50 +- lines of code.
+
+
+
+```bash
+$ which freeze
+$ freeze --help
+```
+
+
+
+
+How to use `freeze`:
+
+```bash
+$ freeze --execute "ls -lah"
+
+$ frreze artichoke.hs -o artichoke.png
+```
+
+
+
+
+
+
+
 
 ## 🗑️ Uninstalling Utilities
 ---
@@ -1476,3 +1571,5 @@ sudo npm uninstall -g birthday
 git config --global --unset user.name
 git config --global --unset user.email
 ```
+
+
