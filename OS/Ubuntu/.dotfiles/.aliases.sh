@@ -36,12 +36,15 @@ alias lsc=exa			# colored ls cmd
 alias ip='ip -c'		# colored ip cmd
 
 
-
 alias fzf_print_file='file=$(fzf) && echo "Absolute path: $(realpath $file)" && cat "$file"'
 
 alias fzf_cmd_helper='cmd=$(compgen -c | fzf) && man $cmd 2> /dev/null || $cmd --help 2> /dev/null || type $cmd 2> /dev/null || echo "unkwon $cmd"'
 
 alias fzf_history='cmd=$(history | sort -r | fzf | awk '\''{$1=""; print substr($0,2)}'\'') && echo "$cmd" && eval "$cmd"'
+
+
+# For copy-ing the output of a (piped) command to clipboard
+alias clip='xclip -selection clipboard'
 
 
 # List of favourite `oh-my-posh` themes

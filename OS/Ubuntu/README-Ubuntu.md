@@ -174,6 +174,9 @@ sudo apt install fd-find
 sudo apt install colortest
 sudo apt install cmatrix
 sudo apt install sl         				# Steam Locomotive animation
+
+# For copy-ing the output of a (piped) command to clipboard
+sudo apt-get install xclip
 ```
 
 
@@ -569,6 +572,10 @@ alias fzf_cmd_helper='cmd=$(compgen -c | fzf) && man $cmd 2> /dev/null || $cmd -
 
 
 alias fzf_history='cmd=$(history | sort -r | fzf | awk '\''{$1=""; print substr($0,2)}'\'') && echo "$cmd" && eval "$cmd"'
+
+
+# For copy-ing the output of a (piped) command to clipboard
+alias clip='xclip -selection clipboard'
 
 
 # List of favourite `oh-my-posh` themes
