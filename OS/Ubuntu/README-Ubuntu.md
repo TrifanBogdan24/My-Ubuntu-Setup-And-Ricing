@@ -17,6 +17,7 @@ Here is my configuration for the `Linux UBUNTU` terminal.
 		- [`snap` packages installation](#snap-packages-installation)
 		- [`cargo` packages installation](#cargo-packages-installation)
 		- [`npm` packages installation](#npm-packages-installation)
+		- [`nala`](#nala)
 	- [💾 Configuration File (`~/.bashrc`)](#-configuration-file-bashrc)
 	- [⚙️ Basic Terminal Customizations](#️-basic-terminal-customizations)
 		- [🗛 Nerd Fonts](#-nerd-fonts)
@@ -288,6 +289,70 @@ sudo npm install -g birthday
 ```
 
 
+
+
+### `nala`
+---
+
+
+
+<!-- Stop using APT -->
+<div style="border: 1px solid #ddd; padding: 10px; max-width: 300px; position: relative; display: inline-block;">
+	<a href="https://youtu.be/oroSkR4Nn_w" target="_blank" style="display: block; position: relative;">
+		<!--  Thumbnail -->
+		<img src="https://i.ytimg.com/vi/oroSkR4Nn_w/sddefault.jpg" alt="YouTube Thumbnail" style="width: 100%; display: block;">
+		<!-- Play button in the center -->
+		<div style="position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 60px; height: 60px; background: rgba(255, 0, 0, 0.8); border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+			<div style="width: 0; height: 0; border-left: 15px solid white; border-top: 10px solid transparent; border-bottom: 10px solid transparent;"></div>
+		</div>
+		<!-- Black rectangle with duration at bottom-right -->
+		<div style="position: absolute; bottom: 8px; right: 8px; background: rgba(0, 0, 0, 0.8); color: white; padding: 2px 6px; font-size: 12px; border-radius: 3px;">
+			09:56
+		</div>
+	</a>
+	<div style="margin: 0 auto; width: 90%; text-align: left;">
+		<!-- Text of URL -->
+		<p style="margin: 10px 0;"><a href="https://youtu.be/oroSkR4Nn_w" target="_blank">https://youtu.be/oroSkR4Nn_w</a></p>
+		<!-- Separation line -->
+		<hr style="border: 0; height: 1px; background: #ddd; margin: 10px 0;">
+		<!-- Text of Title -->
+		<p style="margin: 10px 0;"><a href="https://youtu.be/oroSkR4Nn_w" target="_blank">Stop using APT</a></p>
+	</div>
+</div>
+
+
+
+> Check the GitLab repo: <https://gitlab.com/volian/nala.git>.
+
+
+
+Installation: <https://gitlab.com/volian/nala/-/wikis/Installation>.
+
+
+```bash
+$ sudo apt install nala
+
+# Alternatively you can use the Volian Scar repo
+$ curl https://gitlab.com/volian/volian-archive/-/raw/main/install-nala.sh | bash
+
+# Note: Ubuntu 20.04, 22.04 and Debian Bullseye this script may fail. If it does run:
+$ sudo apt install -t nala nala
+```
+
+
+Commands for nala:
+```bash
+$ sudo nala upgrade
+$ nala history
+$ nala install kitty
+$ nala history
+$ sudo nala history undo 2
+
+# Fetch fast mirrors to improve download speed
+$ sudo nala fetch
+
+$ sudo nala update
+```
 
 
 
