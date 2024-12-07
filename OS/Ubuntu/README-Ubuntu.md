@@ -640,7 +640,7 @@ alias fzf_history='cmd=$(history | sort -r | fzf | awk '\''{$1=""; print substr(
 
 
 # For copy-ing the output of a (piped) command to clipboard
-alias clip='xclip -selection clipboard'
+alias copy='xclip -selection clipboard'
 
 
 # List of favourite `oh-my-posh` themes
